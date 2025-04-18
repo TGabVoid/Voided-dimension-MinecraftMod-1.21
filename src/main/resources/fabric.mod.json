@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "voided-dimension",
+	"version": "${version}",
+	"name": "Voided Dimension",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"TheVoidGG_"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/voided-dimension/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"dev.gabvoid.voideddimension.VoidedDimension"
+		],
+		"fabric-datagen": [
+			"dev.gabvoid.voideddimension.VoidedDimensionDataGenerator"
+		],
+		"client": [
+			"dev.gabvoid.voideddimension.VoidedDimesionClient"
+		]
+	},
+	"mixins": [
+		"voided-dimension.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.13",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
