@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:cellular",
+  "firstOctave": -2,
+  "amplitudes": [1.0, 0.5, 0.25]
+}

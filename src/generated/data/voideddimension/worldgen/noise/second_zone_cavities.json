@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:legacy_simplex",
+  "firstOctave": -2,
+  "amplitudes": [1.0, 0.7, 0.45]
+}

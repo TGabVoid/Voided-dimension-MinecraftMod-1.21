@@ -1,0 +1,8 @@
+{
+  "feature": "voideddimension:gap_pillar",
+  "placement": [
+    { "type": "minecraft:count", "count": 1 },
+    { "type": "minecraft:in_square" },
+    { "type": "minecraft:height_range", "height": { "type": "minecraft:uniform", "min_inclusive": { "absolute": 440 }, "max_inclusive": { "absolute": 448 } } }
+  ]
+}

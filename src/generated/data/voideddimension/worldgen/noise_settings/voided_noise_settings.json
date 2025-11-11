@@ -1,0 +1,204 @@
+{
+  "sea_level": 0,
+  "disable_mob_generation": true,
+  "legacy_random_source": false,
+  "ore_veins_enabled": false,
+  "aquifers_enabled": false,
+  "spawn_target": [],
+  "surface_rule": {
+    "type": "minecraft:sequence",
+    "sequence": [
+      {
+        "type": "minecraft:condition",
+        "if_true": { "type": "minecraft:y_above", "anchor": { "absolute": 459 }, "surface_depth_multiplier": 0, "add_stone_depth": false },
+        "then_run": { "type": "minecraft:block", "result_state": { "Name": "minecraft:bedrock" } }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": { "type": "minecraft:y_above", "anchor": { "absolute": 449 }, "surface_depth_multiplier": 0, "add_stone_depth": false },
+        "then_run": { "type": "minecraft:block", "result_state": { "Name": "minecraft:bedrock" } }
+      },
+      { "type": "minecraft:block", "result_state": { "Name": "voideddimension:curse_cobblestone_block" } }
+    ]
+  },
+  "noise": { "min_y": 0, "height": 464, "size_horizontal": 1, "size_vertical": 1 },
+  "noise_router": {
+    "barrier": { "type": "minecraft:constant", "argument": 0.0 },
+    "fluid_level_floodedness": { "type": "minecraft:constant", "argument": 0.0 },
+    "fluid_level_spread": { "type": "minecraft:constant", "argument": 0.0 },
+    "lava": { "type": "minecraft:constant", "argument": 0.0 },
+    "temperature": { "type": "minecraft:y_clamped_gradient", "from_y": 353, "to_y": 448, "from_value": 0.0, "to_value": 1.0 },
+    "vegetation": { "type": "minecraft:y_clamped_gradient", "from_y": 337, "to_y": 353, "from_value": 0.0, "to_value": 1.0 },
+    "continents": { "type": "minecraft:y_clamped_gradient", "from_y": 253, "to_y": 268, "from_value": 1.0, "to_value": 0.0 },
+    "erosion": { "type": "minecraft:y_clamped_gradient", "from_y": 153, "to_y": 252, "from_value": 0.0, "to_value": 1.0 },
+    "depth": { "type": "minecraft:y_clamped_gradient", "from_y": 25, "to_y": 44, "from_value": 1.0, "to_value": 0.0 },
+    "ridges": { "type": "minecraft:y_clamped_gradient", "from_y": 0, "to_y": 24, "from_value": 1.0, "to_value": 0.0 },
+    "initial_density_without_jaggedness": { "type": "minecraft:constant", "argument": 0.0 },
+    "final_density": {
+      "type": "minecraft:add",
+      "argument1": {
+        "type": "minecraft:add",
+        "argument1": {
+          "type": "minecraft:mul",
+          "argument1": {
+            "type": "minecraft:add",
+            "argument1": { "type": "minecraft:constant", "argument": 1.0 },
+            "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:noise", "noise": "voideddimension:first_surface_base", "xz_scale": 0.035, "y_scale": 0.24 }, "argument2": { "type": "minecraft:constant", "argument": 0.35 } }
+          },
+          "argument2": {
+            "type": "minecraft:mul",
+            "argument1": { "type": "minecraft:add", "argument1": { "type": "minecraft:constant", "argument": 0.0 }, "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:noise", "noise": "voideddimension:first_surface_cracks", "xz_scale": 0.08, "y_scale": 0.30 }, "argument2": { "type": "minecraft:constant", "argument": 0.18 } } },
+            "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 220, "to_y": 265, "from_value": 0.0, "to_value": 1.0 }, "argument2": { "type": "minecraft:y_clamped_gradient", "from_y": 345, "to_y": 350, "from_value": 1.0, "to_value": 0.0 } }
+          }
+        },
+        "argument2": {
+          "type": "minecraft:mul",
+          "argument1": {
+            "type": "minecraft:add",
+            "argument1": { "type": "minecraft:add", "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": 0.9 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:second_zone_base", "xz_scale": 0.04, "y_scale": 0.18 } }, "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -0.45 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:second_zone_cavities", "xz_scale": 0.065, "y_scale": 0.22 } } },
+            "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": 0.3 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:first_surface_cracks", "xz_scale": 0.11, "y_scale": 0.35 } }
+          },
+          "argument2": { "type": "minecraft:y_clamped_gradient", "from_y": 153, "to_y": 252, "from_value": 0.0, "to_value": 1.0 }
+        }
+      },
+      "argument2": {
+        "type": "minecraft:add",
+        "argument1": {
+          "type": "minecraft:add",
+          "argument1": {
+            "type": "minecraft:add",
+            "argument1": {
+              "type": "minecraft:mul",
+              "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 352, "to_y": 355, "from_value": 0.0, "to_value": 1.0 }, "argument2": { "type": "minecraft:y_clamped_gradient", "from_y": 448, "to_y": 449, "from_value": 1.0, "to_value": 0.0 } },
+              "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -8.0 }, "argument2": { "type": "minecraft:add", "argument1": { "type": "minecraft:constant", "argument": 1.0 }, "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": 0.35 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:first_surface_cracks", "xz_scale": 0.16, "y_scale": 0.32 } } } }
+            },
+            "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 449, "to_y": 463, "from_value": 0.0, "to_value": 1.0 }, "argument2": { "type": "minecraft:constant", "argument": 2.0 } }
+          },
+          "argument2": {
+            "type": "minecraft:add",
+            "argument1": {
+              "type": "minecraft:add",
+              "argument1": {
+                "type": "minecraft:mul",
+                "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 353, "to_y": 356, "from_value": 0.0, "to_value": 1.0 }, "argument2": { "type": "minecraft:y_clamped_gradient", "from_y": 356, "to_y": 360, "from_value": 1.0, "to_value": 0.0 } },
+                "argument2": { "type": "minecraft:add", "argument1": { "type": "minecraft:add", "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -3.6 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:catastrophic_shred", "xz_scale": 0.12, "y_scale": 0.85 } } }, "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -1.8 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:first_surface_cavities", "xz_scale": 0.18, "y_scale": 0.90 } } } }, "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -0.6 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:surface_pattern_breaker", "xz_scale": 0.12, "y_scale": 0.70 } } } }
+              },
+              "argument2": {
+                "type": "minecraft:mul",
+                "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 350, "to_y": 352, "from_value": 0.0, "to_value": 1.0 }, "argument2": { "type": "minecraft:y_clamped_gradient", "from_y": 352, "to_y": 356, "from_value": 1.0, "to_value": 0.0 } },
+                "argument2": { "type": "minecraft:add", "argument1": { "type": "minecraft:add", "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -2.7 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:catastrophic_shred", "xz_scale": 0.095, "y_scale": 0.78 } } }, "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -1.35 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:second_zone_base", "xz_scale": 0.07, "y_scale": 0.58 } } } }, "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -0.45 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:surface_pattern_breaker", "xz_scale": 0.10, "y_scale": 0.62 } } } }
+              }
+            },
+            "argument2": {
+              "type": "minecraft:add",
+              "argument1": {
+                "type": "minecraft:mul",
+                "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 346, "to_y": 349, "from_value": 0.0, "to_value": 1.0 }, "argument2": { "type": "minecraft:y_clamped_gradient", "from_y": 353, "to_y": 356, "from_value": 1.0, "to_value": 0.0 } },
+                "argument2": {
+                  "type": "minecraft:mul",
+                  "argument1": { "type": "minecraft:add", "argument1": { "type": "minecraft:constant", "argument": 1.0 }, "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": 0.60 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:first_surface_cracks", "xz_scale": 0.18, "y_scale": 0.40 } } },
+                  "argument2": {
+                    "type": "minecraft:add",
+                    "argument1": { "type": "minecraft:add", "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": 1.05 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:second_zone_base", "xz_scale": 0.05, "y_scale": 0.22 } }, "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": 0.45 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:second_zone_base", "xz_scale": 0.035, "y_scale": 0.30 } } },
+                    "argument2": {
+                      "type": "minecraft:add",
+                      "argument1": { "type": "minecraft:add", "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -0.18 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:first_surface_cracks", "xz_scale": 0.14, "y_scale": 0.34 } }, "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -0.09 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:first_surface_cavities", "xz_scale": 0.09, "y_scale": 0.30 } } },
+                      "argument2": {
+                        "type": "minecraft:add",
+                        "argument1": { "type": "minecraft:add", "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 346, "to_y": 354, "from_value": 1.0, "to_value": 0.0 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:second_zone_base", "xz_scale": 0.03, "y_scale": 0.34 } } }, "argument2": { "type": "minecraft:constant", "argument": -0.32 } }, "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 346, "to_y": 352, "from_value": 1.0, "to_value": 0.0 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:second_zone_base", "xz_scale": 0.06, "y_scale": 0.20 } } }, "argument2": { "type": "minecraft:constant", "argument": -0.18 } } },
+                        "argument2": {
+                          "type": "minecraft:add",
+                          "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 346, "to_y": 351, "from_value": 1.0, "to_value": 0.0 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:second_zone_base", "xz_scale": 0.025, "y_scale": 0.38 } } }, "argument2": { "type": "minecraft:constant", "argument": -0.22 } },
+                          "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 346, "to_y": 350, "from_value": 1.0, "to_value": 0.0 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:second_zone_base", "xz_scale": 0.05, "y_scale": 0.22 } } }, "argument2": { "type": "minecraft:constant", "argument": -0.12 } }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
+              "argument2": {
+                "type": "minecraft:add",
+                "argument1": { "type": "minecraft:constant", "argument": 0.0 },
+                "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -0.35 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:giant_ruptures", "xz_scale": 0.045, "y_scale": 0.90 } } }
+              }
+            }
+          }
+        },
+        "argument2": {
+          "type": "minecraft:add",
+          "argument1": {
+            "type": "minecraft:mul",
+            "argument1": {
+              "type": "minecraft:mul",
+              "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 130, "to_y": 153, "from_value": 1.0, "to_value": 0.0 },
+              "argument2": { "type": "minecraft:y_clamped_gradient", "from_y": 46, "to_y": 64, "from_value": 0.0, "to_value": 1.0 }
+            },
+            "argument2": {
+              "type": "minecraft:add",
+              "argument1": {
+                "type": "minecraft:add",
+                "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": 1.20 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:third_zone_base", "xz_scale": 0.05, "y_scale": 0.36 } },
+                "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -1.092 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:third_zone_cavities", "xz_scale": 0.09, "y_scale": 0.44 } }
+              },
+              "argument2": {
+                "type": "minecraft:add",
+                "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -0.351 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:first_surface_cracks", "xz_scale": 0.14, "y_scale": 0.55 } } },
+                "argument2": {
+                  "type": "minecraft:add",
+                  "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 60, "to_y": 90, "from_value": 1.0, "to_value": 0.0 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:third_zone_base", "xz_scale": 0.035, "y_scale": 0.46 } } }, "argument2": { "type": "minecraft:constant", "argument": 0.16 } },
+                  "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 55, "to_y": 80, "from_value": 1.0, "to_value": 0.0 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:third_zone_base", "xz_scale": 0.06, "y_scale": 0.30 } } }, "argument2": { "type": "minecraft:constant", "argument": 0.11 } }
+                }
+              }
+            }
+          },
+          "argument2": {
+            "type": "minecraft:mul",
+            "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 40, "to_y": 54, "from_value": 1.0, "to_value": 0.0 },
+            "argument2": {
+              "type": "minecraft:mul",
+              "argument1": {
+                "type": "minecraft:mul",
+                "argument1": {
+                  "type": "minecraft:add",
+                  "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": 1.20 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:lower_zone_base", "xz_scale": 0.045, "y_scale": 0.44 } },
+                  "argument2": {
+                    "type": "minecraft:add",
+                    "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": 0.35 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:lower_zone_mass", "xz_scale": 0.055, "y_scale": 0.48 } },
+                    "argument2": {
+                      "type": "minecraft:add",
+                      "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -1.04 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:lower_zone_cavities", "xz_scale": 0.12, "y_scale": 0.50 } },
+                      "argument2": { "type": "minecraft:constant", "argument": 0.10 }
+                    }
+                  }
+                },
+                "argument2": {
+                  "type": "minecraft:add",
+                  "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": 0.20 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:cubic_hint", "xz_scale": 0.20, "y_scale": 0.24 } },
+                  "argument2": {
+                    "type": "minecraft:add",
+                    "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 0, "to_y": 30, "from_value": 0.0, "to_value": 0.22 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:bridge_skeleton", "xz_scale": 0.10, "y_scale": 0.60 } },
+                    "argument2": {
+                      "type": "minecraft:add",
+                      "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 0, "to_y": 26, "from_value": 0.0, "to_value": 0.18 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:bridge_spikes", "xz_scale": 0.10, "y_scale": 0.62 } } },
+                      "argument2": {
+                        "type": "minecraft:add",
+                        "argument1": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 0, "to_y": 32, "from_value": 0.0, "to_value": 0.28 }, "argument2": { "type": "minecraft:noise", "noise": "voideddimension:islands_cellular", "xz_scale": 0.11, "y_scale": 0.40 } },
+                        "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:y_clamped_gradient", "from_y": 0, "to_y": 26, "from_value": 0.0, "to_value": 1.0 }, "argument2": { "type": "minecraft:mul", "argument1": { "type": "minecraft:constant", "argument": -0.24 }, "argument2": { "type": "minecraft:abs", "argument": { "type": "minecraft:noise", "noise": "voideddimension:islands_cellular", "xz_scale": 0.09, "y_scale": 0.48 } } } }
+                      }
+                    }
+                  }
+                }
+              },
+              "argument2": { "type": "minecraft:y_clamped_gradient", "from_y": 0, "to_y": 3, "from_value": 0.0, "to_value": 1.0 }
+            }
+          }
+        }
+      }
+    },
+    "vein_toggle": { "type": "minecraft:constant", "argument": 0.0 },
+    "vein_ridged": { "type": "minecraft:constant", "argument": 0.0 },
+    "vein_gap": { "type": "minecraft:constant", "argument": 0.0 }
+  },
+  "default_block": { "Name": "voideddimension:curse_stone_block" },
+  "default_fluid": { "Name": "minecraft:air" }
+}

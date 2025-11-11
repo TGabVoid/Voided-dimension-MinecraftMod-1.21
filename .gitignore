@@ -1,0 +1,51 @@
+# Gradle
+.gradle/
+build/
+out/
+classes/
+
+# Eclipse
+*.launch
+.settings/
+.metadata
+.classpath
+.project
+bin/
+
+# IntelliJ
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# VSCode
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Minecraft runtime
+run/
+
+# Fabric
+remapped_mods/
+
+# Logs y Crash Reports
+logs/
+crash-reports/
+*.log
+
+# Archivos temporales
+*.swp
+*.tmp
+*~
+
+# Builds
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Otros
+*.class
+*.zip
+.cache
+
