@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "voideddimension:block/grey_stone_block"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "type": "minecraft:perlin",
+  "firstOctave": -5,
+  "amplitudes": [1.0, 0.75, 0.5, 0.35, 0.24, 0.17]
+}

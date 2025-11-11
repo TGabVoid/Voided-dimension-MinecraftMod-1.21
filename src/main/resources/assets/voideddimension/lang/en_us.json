@@ -1,0 +1,17 @@
+{
+  "item.voideddimension.amalgama": "Amalgama",
+  "item.voideddimension.black_rosehip": "Black Rosehip",
+  "block.voideddimension.amalgama_ore_block": "Amalgama Ore Block",
+  "block.voideddimension.agonizing_light_trail": "Agonizing Light Trail",
+  "item.voideddimension.agonizing_glow": "Agonizing Glow",
+  "block.voideddimension.amalgama_block": "Amalgama Block",
+  "itemGroup.voided_items": "Voided Items",
+  "blockGroup.voided_blocks": "Voided Blocks",
+
+  "item.voided_dimension.agonizing_glow.shiftdown.tooltip1": "§eSmall Light§8, §7use §f§lright-click §7to pierce through the void.",
+  "item.voided_dimension.agonizing_glow.shiftdown.tooltip2": "§8§oA trace of light in the abyss... Soon it will go out. ",
+  "item.voided_dimension.agonizing_glow.tooltip": "§7Hold §f§lShift §7to observe its glow",
+
+  "entity.voideddimension.puppetman": "Puppetman",
+  "item.voideddimension.puppetman_spawn_egg": "Puppetman Spawn Egg"
+}

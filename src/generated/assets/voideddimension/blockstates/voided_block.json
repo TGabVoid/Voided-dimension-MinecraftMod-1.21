@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "voideddimension:block/voided_block",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "voideddimension:block/voided_block"
+    },
+    "axis=z": {
+      "model": "voideddimension:block/voided_block",
+      "x": 90
+    }
+  }
+}
