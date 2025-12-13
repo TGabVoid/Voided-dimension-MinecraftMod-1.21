@@ -1,0 +1,51 @@
+{
+  "has_precipitation": false,
+  "temperature": 0.65,
+  "downfall": 0.0,
+  "temperature_modifier": "none",
+  "player_spawn_friendly": false,
+  "precipitation": "none",
+  "category": "plains",
+  "depth": 0.0,
+  "scale": 0.0,
+  "effects": {
+    "sky_color": 0,
+    "fog_color": 4279904,
+    "water_color": 3158064,
+    "water_fog_color": 2302755,
+    "grass_color": 5526612,
+    "foliage_color": 4473924,
+    "ambient_sound": "minecraft:ambient.nether_wastes.loop",
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "offset": 2.0,
+      "block_search_extent": 8
+    }
+  },
+  "spawn_costs": {},
+  "spawners": {
+    "monster": [],
+    "creature": [],
+    "ambient": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "creature_spawn_probability": 0.0,
+  "carvers": {
+    "air": [],
+    "liquid": []
+  },
+  "features": [
+    [ "voideddimension:fragmented_edges" ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ]
+}

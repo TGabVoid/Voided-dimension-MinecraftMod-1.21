@@ -1,6 +1,7 @@
 package dev.gabvoid.voideddimension.world;
 
 import dev.gabvoid.voideddimension.VoidedDimension;
+import dev.gabvoid.voideddimension.world.feature.FragmentedEdgesFeature;
 import dev.gabvoid.voideddimension.world.feature.PillarFeature;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
@@ -21,6 +22,11 @@ public class ModFeatures {
             Identifier.of(VoidedDimension.MOD_ID, "pillar"),
             new PillarFeature(DefaultFeatureConfig.CODEC)
     );
+    private static final Feature<DefaultFeatureConfig> FRAGMENTED_EDGES_FEATURE = Registry.register(
+            Registries.FEATURE,
+            Identifier.of(VoidedDimension.MOD_ID, "fragmented_edges"),
+            new FragmentedEdgesFeature(DefaultFeatureConfig.CODEC)
+    );
 
     public static void register() {
         var checkId = Identifier.of(VoidedDimension.MOD_ID, "pillar");
@@ -28,11 +34,15 @@ public class ModFeatures {
         VoidedDimension.LOGGER.info("[voideddimension] Feature '{}' registered at init? {}", checkId, present != null);
         System.out.println("[ModFeatures] Feature present in registry at init: " + (present != null));
 
-        // Hook the placed feature (defined via datapack JSON) into all biomes at LOCAL_MODIFICATIONS
-        RegistryKey<PlacedFeature> placedKey = RegistryKey.of(RegistryKeys.PLACED_FEATURE,
+        RegistryKey<PlacedFeature> pillars = RegistryKey.of(RegistryKeys.PLACED_FEATURE,
                 Identifier.of(VoidedDimension.MOD_ID, "gap_pillars"));
-        BiomeModifications.addFeature(BiomeSelectors.all(), GenerationStep.Feature.LOCAL_MODIFICATIONS, placedKey);
-        VoidedDimension.LOGGER.info("[voideddimension] Added placed feature {} to all biomes at {}", placedKey.getValue(), GenerationStep.Feature.LOCAL_MODIFICATIONS);
+        RegistryKey<PlacedFeature> edgesFeature = RegistryKey.of(RegistryKeys.PLACED_FEATURE,
+                Identifier.of(VoidedDimension.MOD_ID, "fragmented_edges"));
+        BiomeModifications.addFeature(BiomeSelectors.all(), GenerationStep.Feature.LOCAL_MODIFICATIONS, pillars);
+        BiomeModifications.addFeature(BiomeSelectors.includeByKey(ModDimensions.FRAGMENTED_PLAINS_KEY), GenerationStep.Feature.UNDERGROUND_DECORATION, edgesFeature);
+        VoidedDimension.LOGGER.info("[voideddimension] Added placed feature {} to all biomes at {}", pillars.getValue(), GenerationStep.Feature.LOCAL_MODIFICATIONS);
+        VoidedDimension.LOGGER.info("[voideddimension] Added placed feature {} to all biomes at {}", edgesFeature.getValue(), GenerationStep.Feature.UNDERGROUND_DECORATION);
         System.out.println("[ModFeatures] Added placed feature 'gap_pillars' to all biomes");
+        System.out.println("[ModFeatures] Added placed feature 'fragmented_edges' to fragmented plains");
     }
 }

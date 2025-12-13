@@ -10,6 +10,9 @@ import org.slf4j.LoggerFactory;
 import dev.gabvoid.voideddimension.entity.ModEntities;
 import dev.gabvoid.voideddimension.world.ModFeatures;
 
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import dev.gabvoid.voideddimension.commands.DebugPuppetAnimCommand;
+
 public class VoidedDimension implements ModInitializer {
     public static final String MOD_ID = "voideddimension";
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
@@ -23,6 +26,10 @@ public class VoidedDimension implements ModInitializer {
 
         ModEntities.register();
         ModFeatures.register();
+
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
+            DebugPuppetAnimCommand.register(dispatcher, registryAccess);
+        });
 
         LOGGER.info("VoidedDimension inicializado");
     }

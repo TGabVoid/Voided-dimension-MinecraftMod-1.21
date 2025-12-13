@@ -8,23 +8,11 @@
 				"Head": {
 					"position": {
 						"0.0": {
-							"post": {
-								"vector": [0, 0, 0]
-							},
+							"post": { "vector": [0, 0, 0] },
 							"lerp_mode": "catmullrom"
 						},
-						"1.0417": {
-							"post": {
-								"vector": [0, 3, 0]
-							},
-							"lerp_mode": "catmullrom"
-						},
-						"2.0": {
-							"post": {
-								"vector": [0, 0, 0]
-							},
-							"lerp_mode": "catmullrom"
-						}
+						"1.0417": { "post": { "vector": [0, 3, 0] }, "lerp_mode": "catmullrom" },
+						"2.0": { "post": { "vector": [0, 0, 0] }, "lerp_mode": "catmullrom" }
 					}
 				}
 			}
@@ -227,3 +215,4 @@
 	},
 	"geckolib_format_version": 2
 }
+
