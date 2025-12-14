@@ -22,13 +22,18 @@
         "type": "minecraft:condition",
         "if_true": { "type": "minecraft:y_above", "anchor": { "absolute": 356 }, "surface_depth_multiplier": 0, "add_stone_depth": false },
         "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:curse_cobblestone_block" } }
-              },
-              {
+      },
+      {
         "type": "minecraft:condition",
-        "if_true": { "type": "minecraft:biome", "biome_is": [ "voideddimension:rose_desert" ] },
+        "if_true": {
+          "type": "minecraft:y_above",
+          "anchor": { "absolute": 290 },
+          "surface_depth_multiplier": 0,
+          "add_stone_depth": false
+        },
         "then_run": {
           "type": "minecraft:condition",
-          "if_true": { "type": "minecraft:y_above", "anchor": { "absolute": 270 }, "surface_depth_multiplier": 0, "add_stone_depth": false },
+          "if_true": { "type": "minecraft:biome", "biome_is": [ "voideddimension:rose_desert" ] },
           "then_run": {
             "type": "minecraft:sequence",
             "sequence": [
@@ -44,10 +49,15 @@
       },
       {
         "type": "minecraft:condition",
-        "if_true": { "type": "minecraft:biome", "biome_is": [ "voideddimension:fragmented_plains" ] },
+        "if_true": {
+          "type": "minecraft:y_above",
+          "anchor": { "absolute": 290 },
+          "surface_depth_multiplier": 0,
+          "add_stone_depth": false
+        },
         "then_run": {
           "type": "minecraft:condition",
-          "if_true": { "type": "minecraft:y_above", "anchor": { "absolute": 270 }, "surface_depth_multiplier": 0, "add_stone_depth": false },
+          "if_true": { "type": "minecraft:biome", "biome_is": [ "voideddimension:fragmented_plains" ] },
           "then_run": {
             "type": "minecraft:sequence",
             "sequence": [
@@ -63,19 +73,24 @@
       },
       {
         "type": "minecraft:condition",
-        "if_true": { "type": "minecraft:biome", "biome_is": [ "voideddimension:shatter_reef" ] },
+        "if_true": {
+          "type": "minecraft:y_above",
+          "anchor": { "absolute": 290 },
+          "surface_depth_multiplier": 0,
+          "add_stone_depth": false
+        },
         "then_run": {
-          "type": "minecraft:sequence",
-          "sequence": [
-            {
-              "type": "minecraft:condition",
-              "if_true": { "type": "minecraft:noise_threshold", "noise": "voideddimension:fragmented_fissure_mask", "min_threshold": 0.35, "max_threshold": 1.0 },
-              "then_run": { "type": "minecraft:block", "result_state": { "Name": "minecraft:sea_lantern" } }
-            },
-            {
-              "type": "minecraft:condition",
-              "if_true": { "type": "minecraft:y_above", "anchor": { "absolute": 270 }, "surface_depth_multiplier": 0, "add_stone_depth": false },
-              "then_run": {
+          "type": "minecraft:condition",
+          "if_true": { "type": "minecraft:biome", "biome_is": [ "voideddimension:shatter_reef" ] },
+          "then_run": {
+            "type": "minecraft:sequence",
+            "sequence": [
+              {
+                "type": "minecraft:condition",
+                "if_true": { "type": "minecraft:noise_threshold", "noise": "voideddimension:fragmented_fissure_mask", "min_threshold": 0.35, "max_threshold": 1.0 },
+                "then_run": { "type": "minecraft:block", "result_state": { "Name": "minecraft:sea_lantern" } }
+              },
+              {
                 "type": "minecraft:sequence",
                 "sequence": [
                   {
@@ -86,8 +101,8 @@
                   { "type": "minecraft:block", "result_state": { "Name": "minecraft:prismarine" } }
                 ]
               }
-            }
-          ]
+            ]
+          }
         }
       },
       { "type": "minecraft:block", "result_state": { "Name": "voideddimension:curse_cobblestone_block" } }
