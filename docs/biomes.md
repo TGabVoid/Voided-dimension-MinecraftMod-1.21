@@ -1,72 +1,93 @@
-# BIOMES — Zonas de Distorsión
+# BIOMAS — Voideddimension
 
-Cada bioma del Vacío representa un estado emocional extremo.
+Los biomas del Vacío no buscan diversidad estética.
 
-No son variaciones estéticas.
+Buscan coherencia emocional.
 
-Son estados mentales convertidos en espacio.
+Cada uno representa una fase del descenso.
+Una variación dentro de la misma arquitectura vertical.
 
----
+No son lugares aislados.
 
-## Principios de Diseño
-
-- Cada bioma prepara un encuentro.
-- Cada bioma anticipa un jefe.
-- Cada bioma altera la percepción del jugador.
-
-No hay transición suave.
-
-Hay deterioro progresivo.
+Son estados dentro de una caída.
 
 ---
 
-## Ejemplos de Biomas
+## Fragmented Plains
 
-### Zona de Fragmentación
+Llanuras abiertas atravesadas por grietas profundas.
 
-Terreno irregular.  
-Superficies incompletas.  
-Bloques que parecen desalineados.
+El terreno parece quebrado desde abajo.
+Las superficies no son continuas.
+El espacio se siente inestable.
 
-Sensación dominante: pérdida de estabilidad.
+Aquí el silencio pesa más.
 
----
-
-### Zona de Negación
-
-Espacios amplios.  
-Vacíos exagerados.  
-Sonido ambiental mínimo.
-
-Sensación dominante: aislamiento.
+Es el tipo de lugar donde el mundo ya empezó a fallar,
+pero todavía mantiene cierta estructura.
 
 ---
 
-### Zona de Presión
+## Rose Desert
 
-Terreno comprimido.  
-Alturas reducidas.  
-Sensación constante de claustrofobia.
+Extensiones de arena seca.
+Restos fósiles dispersos.
+Rosas petrificadas emergiendo del suelo.
 
-Sensación dominante: ansiedad.
+La belleza aparece como un error.
 
----
+Fría.
+Inmóvil.
+Artificial.
 
-## Relación con los Jefes
-
-El bioma no es antesala.
-
-Es advertencia.
-
-Cada entorno moldea emocionalmente al jugador  
-antes del enfrentamiento principal.
-
-Cuando aparece el jefe,  
-el jugador ya debería estar afectado.
+No transmite vida.
+Transmite memoria.
 
 ---
 
-El Vacío no cambia por estética.
+## Shatter Reef
 
-Cambia por significado.
+Formaciones afiladas.
+Cristales irregulares.
+Luz azul tenue dispersa en el entorno.
 
+Un paisaje frío.
+
+El brillo no ofrece seguridad.
+Solo resalta lo fragmentado.
+
+Es un bioma donde la forma empieza a perder coherencia.
+
+---
+
+## Inactive Threshold
+
+Zona casi vacía.
+Espacio transicional dentro del descenso.
+
+El terreno es mínimo.
+Las estructuras son escasas.
+El silencio domina.
+
+Es el tipo de lugar que anuncia que algo está por romperse.
+
+No ocurre nada evidente.
+
+Y eso es lo inquietante.
+
+---
+
+## Dirección General
+
+Los biomas no buscan ser memorables por color o rareza.
+
+Buscan reforzar:
+
+- Descenso.
+- Fragmentación.
+- Contención.
+- Pérdida de estabilidad.
+
+El Vacío no cambia para sorprender.
+
+Cambia para degradarse.
