@@ -1,141 +1,69 @@
-
-Y algo en ella está esperando.
-Fue proyectada.
-El vacío no fue creada.
-
-
-
-
-
-Negación.
-
-
-
-
-Es una emoción llevada al extremo.
-
-
-
-
-
-
-Al descender, el terreno deja de comportarse como debería.
-
-
-Está ahí para contener.
-
-
-
-Los pilares no son decoración geológica.
-
-
-
-La cúpula de bedrock no parece natural.
-
-No está ahí para decorar.
-
-
-\# LORE — VOIDED DIMENSION
-
-
+# LORE — Voided Dimension
 
 Nadie sabe quién creó esta dimensión.
 
-
-
 Bajo el Overworld existe algo que nunca debió ser descubierto.
 
-
-
-Nadie sabe quién creó este lugar.
-
-No es otra dimensión.
-
+No es otra dimensión.  
 No es un nuevo mundo.
-
-
-
-Algunos creen que es un error.
-
-Otros creen que es un recuerdo.
-
-
 
 Es una prisión.
 
+---
 
+## Naturaleza del Vacío
 
-La cúpula de bedrock no parece natural.
+Algunos creen que es un error.  
+Otros creen que es un recuerdo.
 
+La cúpula de bedrock no parece natural.  
 No está ahí para decorar.
 
 Está ahí para contener.
 
-
-
-Los pilares no son decoración geológica.
-
-Parecen soportes.
-
+Los pilares no son decoración geológica.  
+Parecen soportes.  
 Como si el mundo estuviera a punto de colapsar.
 
+---
 
+## Descenso
 
 Al descender, el terreno deja de comportarse como debería.
 
-Las formas se fragmentan.
-
-El aire se vuelve pesado.
-
+Las formas se fragmentan.  
+El aire se vuelve pesado.  
 La estabilidad desaparece.
-
-
 
 Es una emoción llevada al extremo.
 
-
-
-Ansiedad.
-
-Paranoia.
-
-Negación.
-
-Culpa.
-
+Ansiedad.  
+Paranoia.  
+Negación.  
+Culpa.  
 Silencio.
 
+La dimensión no grita.  
+Susurra.
 
+No busca asustar con sustos.  
+Busca incomodar con la idea de estar **donde no deberías**.
 
-La dimension no grita. Susurra.
+---
 
-No busca asustar con sustos, sino con la idea de estar \*\*donde no deberias\*\*.
+## Origen
 
+El vacío no fue creado.  
+Fue proyectado.
 
+Y algo en él está esperando.
 
+---
 
-
-El vacío no fue creada.
-
-Fue proyectada.
-
-
-
-Y algo en ella está esperando.
-
-
-
-> “Cuando la Forma pierda su voz
-
-> y el Vacío reclame su eco,
-
-> el Liminal abrirá la grieta.
-
+> “Cuando la Forma pierda su voz  
+> y el Vacío reclame su eco,  
+> el Liminal abrirá la grieta.  
 >
-
-> No elegirá.
-
+> No elegirá.  
 > Recordará.”
-
-
 
