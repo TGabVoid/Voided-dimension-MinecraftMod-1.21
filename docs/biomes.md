@@ -127,3 +127,4 @@ Arrecifes afilados, cristales y luz azul tenue. Un lugar frio donde el brillo no
 
 Zona casi vacia, transicional. El tipo de silencio que anuncia que algo empieza a fallar.
 
+

@@ -125,15 +125,17 @@ Y algo en ella está esperando.
 
 
 
-> “Cuando la Forma pierda su voz  
+> “Cuando la Forma pierda su voz
 
-> y el Vacío reclame su eco,  
+> y el Vacío reclame su eco,
 
-> el Liminal abrirá la grieta.  
+> el Liminal abrirá la grieta.
 
->  
+>
 
-> No elegirá.  
+> No elegirá.
 
 > Recordará.”
+
+
 
