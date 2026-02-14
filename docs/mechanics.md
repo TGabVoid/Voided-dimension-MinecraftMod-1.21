@@ -1,77 +1,69 @@
+# MECHANICS — Sistemas del Vacío
 
+El Vacío no busca dificultad tradicional.
 
+Busca tensión constante.
 
-Se cambia cómo se experimenta el mundo.
+No se trata de daño alto.  
+Se trata de incomodidad sostenida.
 
+---
 
+## Filosofía Mecánica
 
-\## Verticalidad como narrativa
+- El entorno es parte del combate.
+- La percepción puede alterarse.
+- La estabilidad nunca es permanente.
 
+El jugador no debe sentirse dominante.
 
+Debe sentirse observado.
 
-El progreso no es horizontal.
+---
 
-Es descenso.
+## Mecánicas Conceptuales
 
+### Alteración del Terreno
 
+El suelo puede cambiar.  
+Las superficies pueden no ser confiables.
 
-Cada capa transmite algo distinto.
+El entorno no es fijo.
 
+---
 
+### Manipulación Atmosférica
 
-\## Entorno como enemigo
+Oscurecimiento progresivo.  
+Cambios en sonido ambiental.  
+Sensación de presión invisible.
 
+No todo efecto es visual.
 
+---
 
-El terreno no es seguro.
+### Distorsión Espacial
 
-Las estructuras no son confiables.
+Cambios sutiles en percepción de distancia.  
+Desorientación leve.  
+Ambientes que parecen repetirse.
 
-La estabilidad es temporal.
+El objetivo no es confundir.
 
+Es incomodar.
 
+---
 
-\## Sensación antes que recompensa
+## Enfoque General
 
+No buscamos un mod de “más daño y más mobs”.
 
+Buscamos experiencia.
 
-No se trata de loot.
+Cada mecánica debe reforzar una emoción.
 
-Se trata de atmósfera.
+Cada emoción debe tener propósito.
 
+El Vacío no es contenido adicional.
 
-
-El jugador debe sentir presión constante.
-
-Silencio incómodo.
-
-Presencia invisible.
-
-
-
-\##Ítems
-Agonizing Glow: deja un rastro de luz temporal para avanzar en la oscuridad.
-
-Void Pass: te salva del vacio y te transporta a la dimension (se consume al aterrizar).
-
-Black Rosehip: comida rara con levitacion.
-
-Amalgama: material/mineral inicial del contenido nuevo.
-
-
-
-\## Entrada especial
-
-
-
-El acceso a la dimensión no es casual.
-
-Debe sentirse como cruzar un límite.
-
-
-
-El vacío no es un lugar que visitas por recursos.
-
-Es un lugar que visitas por experiencia.
-
-
+Es confrontación.
