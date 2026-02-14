@@ -7,46 +7,46 @@
       "biomes": [
         {
           "biome": "voideddimension:fragmented_plains",
-          "weight": 0.25,
+          "weight": 0.30,
           "parameters": {
-            "temperature": -0.2,
-            "humidity": -0.1,
-            "continentalness": -0.25,
-            "erosion": -0.1,
-            "depth": 0.2,
-            "weirdness": -0.6,
+            "temperature": -0.10,
+            "humidity": -0.10,
+            "continentalness": -0.10,
+            "erosion": -0.08,
+            "depth": 0.15,
+            "weirdness": -0.40,
             "offset": 0.0
           }
         },
         {
           "biome": "voideddimension:rose_desert",
-          "weight": 0.25,
+          "weight": 0.30,
           "parameters": {
-            "temperature": 0.2,
-            "humidity": 0.25,
-            "continentalness": 0.25,
-            "erosion": 0.1,
-            "depth": 0.2,
-            "weirdness": 0.6,
+            "temperature": 0.10,
+            "humidity": 0.10,
+            "continentalness": 0.10,
+            "erosion": 0.08,
+            "depth": 0.15,
+            "weirdness": 0.40,
             "offset": 0.0
           }
         },
         {
           "biome": "voideddimension:shatter_reef",
-          "weight": 0.25,
+          "weight": 0.30,
           "parameters": {
-            "temperature": 0.05,
-            "humidity": 0.05,
-            "continentalness": -0.05,
-            "erosion": -0.05,
-            "depth": 0.2,
+            "temperature": 0.0,
+            "humidity": 0.0,
+            "continentalness": 0.0,
+            "erosion": 0.0,
+            "depth": 0.14,
             "weirdness": 0.0,
             "offset": 0.0
           }
         },
         {
           "biome": "voideddimension:inactive_threshold",
-          "weight": 0.50,
+          "weight": 0.10,
           "parameters": {
             "temperature": 0.0,
             "humidity": 0.0,

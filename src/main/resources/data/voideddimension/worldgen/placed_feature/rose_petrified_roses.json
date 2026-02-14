@@ -1,0 +1,30 @@
+{
+  "feature": "voideddimension:rose_petrified_roses",
+  "placement": [
+    { "type": "minecraft:count", "count": 2 },
+    { "type": "minecraft:in_square" },
+    {
+      "type": "minecraft:height_range",
+      "height": {
+        "type": "minecraft:uniform",
+        "min_inclusive": { "absolute": 348 },
+        "max_inclusive": { "absolute": 353 }
+      }
+    },
+    {
+      "type": "minecraft:block_predicate_filter",
+      "predicate": {
+        "type": "minecraft:all_of",
+        "predicates": [
+          { "type": "minecraft:matching_blocks", "blocks": [ "minecraft:air" ] },
+          {
+            "type": "minecraft:matching_blocks",
+            "offset": [ 0, -1, 0 ],
+            "blocks": [ "minecraft:clay", "minecraft:dead_tube_coral_block" ]
+          }
+        ]
+      }
+    },
+    { "type": "minecraft:biome" }
+  ]
+}

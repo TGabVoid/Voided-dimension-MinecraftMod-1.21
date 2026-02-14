@@ -1,25 +1,14 @@
 {
-  "type": "minecraft:random_patch",
+  "type": "minecraft:block_pile",
   "config": {
-    "tries": 10,
-    "xz_spread": 2,
-    "y_spread": 1,
-    "feature": {
-      "feature": {
-        "type": "minecraft:simple_block",
-        "config": {
-          "to_place": {
-            "type": "minecraft:weighted_state_provider",
-            "entries": [
-              { "weight": 6, "data": { "Name": "minecraft:prismarine_bricks" } },
-              { "weight": 2, "data": { "Name": "minecraft:sea_lantern" } },
-              { "weight": 1, "data": { "Name": "minecraft:cyan_stained_glass" } }
-            ]
-          }
-        }
-      },
-      "placement": []
+    "state_provider": {
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        { "weight": 6, "data": { "Name": "minecraft:prismarine_bricks" } },
+        { "weight": 4, "data": { "Name": "minecraft:calcite" } },
+        { "weight": 2, "data": { "Name": "minecraft:prismarine" } },
+        { "weight": 1, "data": { "Name": "minecraft:sea_lantern" } }
+      ]
     }
   }
 }
-

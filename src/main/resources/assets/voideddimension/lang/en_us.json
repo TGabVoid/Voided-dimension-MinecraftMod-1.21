@@ -13,5 +13,7 @@
   "item.voided_dimension.agonizing_glow.tooltip": "§7Hold §f§lShift §7to observe its glow",
 
   "entity.voideddimension.puppetman": "Puppetman",
-  "item.voideddimension.puppetman_spawn_egg": "Puppetman Spawn Egg"
+  "item.voideddimension.puppetman_spawn_egg": "Puppetman Spawn Egg",
+  "item.voideddimension.void_pass": "Void Pass",
+  "block.voideddimension.fragile_bedrock": "Fragile Bedrock"
 }

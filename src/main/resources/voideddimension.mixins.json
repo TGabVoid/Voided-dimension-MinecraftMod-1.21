@@ -3,7 +3,8 @@
 	"package": "dev.gabvoid.voideddimension.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"BedrockHoleOverworldMixin",
+		"VoidPassDamageMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

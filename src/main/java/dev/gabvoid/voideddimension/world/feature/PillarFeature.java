@@ -12,7 +12,7 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.util.FeatureContext;
 
 public class PillarFeature extends Feature<DefaultFeatureConfig> {
-    private static final int ROOF_UNDERSIDE_Y = 449;
+    private static final int ROOF_UNDERSIDE_Y = 490;
     private static final int MIN_SURFACE_Y = 200;
     // Base spacing target around ~200 blocks with jitter; effective separation ~192-208
     private static final int GRID_CHUNKS_BASE = 12; // 12*16=192; sometimes 13*16=208
@@ -52,14 +52,26 @@ public class PillarFeature extends Feature<DefaultFeatureConfig> {
 
         BlockState material = Blocks.STONE.getDefaultState();
 
-    // Per-pillar radius variation (diameter 9..18 => radius 4.5..9.0)
-    float radiusMin = 4.5f;
-    float radiusMax = 9.0f;
-    float radius = radiusMin + random.nextFloat() * (radiusMax - radiusMin);
+        // Per-pillar radius variation (diameter 11..22 => radius 5.5..11.0)
+        float radiusMin = 5.5f;
+        float radiusMax = 11.0f;
+        float radius = radiusMin + random.nextFloat() * (radiusMax - radiusMin);
         float rSq = radius * radius;
 
+        // Base bulge and taper to break uniform cylinder
+        float baseBulge = 0.8f + random.nextFloat() * 0.7f; // 0.8..1.5
+        float taper = 0.35f + random.nextFloat() * 0.4f; // 0.35..0.75
+
+        // Optional hollow core for variety
+        boolean hollow = random.nextFloat() < 0.35f;
+        float coreRadius = hollow ? (radius * (0.28f + random.nextFloat() * 0.18f)) : 0f; // ~28%..46%
+        float coreRSq = coreRadius * coreRadius;
+
+        // Simple blotch material for inner stains
+        BlockState blotch = random.nextFloat() < 0.5f ? Blocks.ANDESITE.getDefaultState() : Blocks.DIORITE.getDefaultState();
+
         // Precompute ground contact per radial column (so every column can touch its own ground)
-    int r = (int) Math.ceil(radius) + 2;
+        int r = (int) Math.ceil(radius) + 2;
         int size = r * 2 + 1;
         int[][] groundY = new int[size][size]; // store highest solid y for each column inside cylinder
         int maxGround = MIN_SURFACE_Y; // track max ground among columns
@@ -107,17 +119,25 @@ public class PillarFeature extends Feature<DefaultFeatureConfig> {
             for (int dx = -r; dx <= r; dx++) {
                 for (int dz = -r; dz <= r; dz++) {
                     float distSq = dx * dx + dz * dz;
+                    int ix = dx + r, iz = dz + r;
+
+                    // Taper up slightly and add base bulge near ground
+                    int gy = groundY[ix][iz];
+                    float heightNorm = (globalMaxY - y) / (float) Math.max(1, (globalMaxY - gy));
+                    float localRadius = radius - (heightNorm * taper);
+                    if (y <= gy + 12) localRadius += baseBulge * (1.0f - (y - gy) / 12f);
+
                     // Apply stepped banding to local radius threshold
                     int bandIndex = Math.floorDiv(y, stepEvery);
-                    float localRadius = radius - ((bandIndex & 1) == 0 ? 0f : stepDepth);
+                    localRadius -= ((bandIndex & 1) == 0 ? 0f : stepDepth);
                     float localRSq = localRadius * localRadius;
-                    if (distSq > localRSq) continue; // banded cylinder boundary
+                    if (distSq > localRSq) continue; // banded boundary
 
-                    int ix = dx + r, iz = dz + r;
+                    // Optional hollow core
+                    if (hollow && distSq < coreRSq) continue;
+
                     int x = origin.getX() + dx;
                     int z = origin.getZ() + dz;
-
-                    // Full pillars: per-column stop at ground
 
                     // Cracks: horizontal ring segments and some diagonals
                     boolean inCrack = false;
@@ -157,7 +177,6 @@ public class PillarFeature extends Feature<DefaultFeatureConfig> {
                         }
                     }
                     // prevent cracks within the last 2 layers above ground to force full contact
-                    int gy = groundY[ix][iz];
                     if (y <= gy + 2) inCrack = false;
 
                     // Rim micro-chipping (keep very subtle)
@@ -168,7 +187,6 @@ public class PillarFeature extends Feature<DefaultFeatureConfig> {
 
                     // Decide if we should place a block at (x,y,z)
                     boolean place;
-                    // Fill down until touching per-column ground; include the contact block above ground
                     int columnStopY = groundY[ix][iz] + 1;
                     place = y >= columnStopY;
 
@@ -176,7 +194,11 @@ public class PillarFeature extends Feature<DefaultFeatureConfig> {
                         BlockPos pos = new BlockPos(x, y, z);
                         BlockState cur = world.getBlockState(pos);
                         if (cur.isAir()) {
-                            world.setBlockState(pos, material, Block.NOTIFY_ALL);
+                            BlockState out = material;
+                            if (hollow && distSq < (coreRSq + 2.5f) && random.nextFloat() < 0.18f) {
+                                out = blotch; // manchas internas cercanas al hueco
+                            }
+                            world.setBlockState(pos, out, Block.NOTIFY_ALL);
                         }
                     }
                 }

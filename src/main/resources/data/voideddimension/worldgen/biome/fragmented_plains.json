@@ -38,8 +38,9 @@
     "liquid": []
   },
   "features": [
-    [ "voideddimension:fragmented_edges" ],
-    [],
+    [
+      "voideddimension:fragmented_edges"
+    ],
     [],
     [],
     [],

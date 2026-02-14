@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 10,
+    "xz_spread": 4,
+    "y_spread": 1,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:weighted_state_provider",
+            "entries": [
+              { "weight": 4, "data": { "Name": "minecraft:bone_block" } },
+              { "weight": 2, "data": { "Name": "minecraft:smooth_sandstone" } },
+              { "weight": 1, "data": { "Name": "minecraft:smooth_sandstone_slab" } }
+            ]
+          }
+        }
+      },
+      "placement": []
+    }
+  }
+}

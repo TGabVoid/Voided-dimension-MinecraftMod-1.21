@@ -17,6 +17,10 @@ public class ModDimensions
             RegistryKey.of(RegistryKeys.BIOME, Identifier.of("voideddimension", "inactive_threshold"));
     public static final RegistryKey<Biome> FRAGMENTED_PLAINS_KEY =
             RegistryKey.of(RegistryKeys.BIOME, Identifier.of("voideddimension", "fragmented_plains"));
+    public static final RegistryKey<Biome> ROSE_DESERT_KEY =
+            RegistryKey.of(RegistryKeys.BIOME, Identifier.of("voideddimension", "rose_desert"));
+    public static final RegistryKey<Biome> SHATTER_REEF_KEY =
+            RegistryKey.of(RegistryKeys.BIOME, Identifier.of("voideddimension", "shatter_reef"));
 
     // No registrar ni crear el bioma aquí. Defínelo solo en los archivos JSON del datapack.
 }

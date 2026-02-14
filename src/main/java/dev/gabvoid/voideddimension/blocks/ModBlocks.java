@@ -134,6 +134,13 @@ public class ModBlocks {
                     .strength(3.0F, 0.5f))
     );
 
+    public static final Block FRAGILE_BEDROCK = registerBlock(
+            "fragile_bedrock",
+            new Block(AbstractBlock.Settings.create()
+                    .sounds(BlockSoundGroup.STONE)
+                    .strength(0.8F, 0.5F))
+    );
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(VoidedDimension.MOD_ID, name), block);
@@ -164,6 +171,7 @@ public class ModBlocks {
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.add(AMALGAMA_ORE_BLOCK);
+            entries.add(FRAGILE_BEDROCK);
         });
     }
 }

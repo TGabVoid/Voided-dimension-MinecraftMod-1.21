@@ -38,7 +38,11 @@
     "liquid": []
   },
   "features": [
-    [],
+    [
+      "voideddimension:shatter_reef_crystal_crawlers",
+      "voideddimension:shatter_calcite_crests",
+      "voideddimension:shatter_bright_sediment"
+    ],
     [],
     [],
     [],
@@ -48,4 +52,3 @@
     []
   ]
 }
-

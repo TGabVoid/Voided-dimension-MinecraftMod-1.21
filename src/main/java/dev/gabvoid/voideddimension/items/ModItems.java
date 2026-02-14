@@ -16,6 +16,7 @@ public class ModItems
     public static Item AMALGAMA = registerItem("amalgama", new Item(new Item.Settings()));
     public static final Item AGONIZING_GLOW = registerItem("agonizing_glow", new AgonizingGlowItem(new Item.Settings()));
     public static final Item BLACK_ROSEHIP = registerItem("black_rosehip", new Item(new Item.Settings().food(ModFoodComponents.BLACK_ROSEHIP)));
+    public static final Item VOID_PASS = registerItem("void_pass", new Item(new Item.Settings().maxCount(1)));
 
     // Spawn Egg Puppetman (colores base y manchas en formato RGB hex)
     public static final Item PUPPETMAN_SPAWN_EGG = registerItem(
@@ -35,6 +36,7 @@ public class ModItems
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.INGREDIENTS).register(entries -> {
             entries.add(AMALGAMA);
             entries.add(BLACK_ROSEHIP);
+            entries.add(VOID_PASS);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {
@@ -43,6 +45,7 @@ public class ModItems
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.TOOLS).register(entries -> {
             entries.add(AGONIZING_GLOW);
+            entries.add(VOID_PASS);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {

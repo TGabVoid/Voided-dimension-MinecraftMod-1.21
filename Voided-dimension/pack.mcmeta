@@ -1,0 +1,10 @@
+{
+  "pack": {
+    "pack_format": 32,
+    "description": "Voided Dimension datapack"
+  },
+  "metadata": {
+    "fragmented_crack_tag": "voideddimension:fragmented_crack_tag"
+  }
+}
+
