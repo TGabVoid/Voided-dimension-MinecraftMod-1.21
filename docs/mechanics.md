@@ -1,69 +1,128 @@
-# MECHANICS — Sistemas del Vacío
+# EXPERIENCIA DEL MUNDO — PRINCIPIOS
 
-El Vacío no busca dificultad tradicional.
+Se cambia cómo se experimenta el mundo.
 
-Busca tensión constante.
-
-No se trata de daño alto.  
-Se trata de incomodidad sostenida.
+No es expansión.
+Es reinterpretación.
 
 ---
 
-## Filosofía Mecánica
+## Verticalidad como narrativa
 
-- El entorno es parte del combate.
-- La percepción puede alterarse.
-- La estabilidad nunca es permanente.
+El progreso no es horizontal.
 
-El jugador no debe sentirse dominante.
+No se trata de explorar a los lados.
 
-Debe sentirse observado.
+Se trata de descender.
 
----
+Cada capa transmite algo distinto.  
+Cada nivel modifica la sensación.  
+Cada tramo altera el ritmo.
 
-## Mecánicas Conceptuales
+No avanzas.
 
-### Alteración del Terreno
-
-El suelo puede cambiar.  
-Las superficies pueden no ser confiables.
-
-El entorno no es fijo.
+Caes.
 
 ---
 
-### Manipulación Atmosférica
+## Entorno como enemigo
 
-Oscurecimiento progresivo.  
-Cambios en sonido ambiental.  
-Sensación de presión invisible.
+El terreno no es seguro.
 
-No todo efecto es visual.
+Las estructuras no son confiables.
 
----
+La estabilidad es temporal.
 
-### Distorsión Espacial
+El mundo no es un escenario pasivo.  
+Es parte activa de la experiencia.
 
-Cambios sutiles en percepción de distancia.  
-Desorientación leve.  
-Ambientes que parecen repetirse.
-
-El objetivo no es confundir.
-
-Es incomodar.
+No siempre ataca.  
+Pero nunca es neutral.
 
 ---
 
-## Enfoque General
+## Sensación antes que recompensa
 
-No buscamos un mod de “más daño y más mobs”.
+No se trata de loot.
 
-Buscamos experiencia.
+Se trata de atmósfera.
 
-Cada mecánica debe reforzar una emoción.
+El jugador debe sentir:
 
-Cada emoción debe tener propósito.
+- Presión constante.
+- Silencio incómodo.
+- Presencia invisible.
 
-El Vacío no es contenido adicional.
+La recompensa no es solo un objeto.
 
-Es confrontación.
+Es sobrevivir al descenso.
+
+---
+
+# Ítems Actuales
+
+Estos objetos no buscan ser poderosos.  
+Buscan reforzar la experiencia.
+
+---
+
+### Agonizing Glow
+
+Deja un rastro de luz temporal.
+
+No ilumina todo.  
+No elimina el miedo.
+
+Solo permite avanzar unos pasos más.
+
+---
+
+### Void Pass
+
+Permite sobrevivir a la caída.
+
+Transporta a la dimensión.  
+Se consume al aterrizar.
+
+No es un portal permanente.
+
+Es un cruce.
+
+---
+
+### Black Rosehip
+
+Comida rara del entorno.
+
+Otorga levitación.
+
+No es cómoda.  
+Es inestable.
+
+---
+
+### Amalgama
+
+Material base del nuevo contenido.
+
+Mineral inicial del progreso dentro del Vacío.
+
+Representa el comienzo de algo distinto.
+
+---
+
+## Entrada Especial
+
+El acceso a la dimensión no es casual.
+
+Debe sentirse como cruzar un límite.
+
+No es un lugar al que vas por recursos.
+
+Es un lugar al que entras sabiendo  
+que algo cambia.
+
+El Vacío no es farmeo.
+
+Es experiencia.
+
