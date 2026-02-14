@@ -1,12 +1,13 @@
+Revisar /docs para comprender ideas de lore, mobs, items, etc
+
 # VOID-ED DIMENSION
 
 Una dimensión de horror psicológico para Minecraft 1.21 (Fabric).
 
 ---
 
-## ¿Qué es Voideddimension?
+## ¿Qué es Void-ed dimension?
 
-Voideddimension no es una dimensión para explorar.
 Es una dimensión para descender.
 Una dimension rota, oscura y silenciosa. Un lugar donde la luz casi no existe, la piedra se agrieta en patrones extraños y algo observa desde la distancia.
 
@@ -53,7 +54,7 @@ Está pensada para transmitir que el entorno mismo está… consciente.
 
 ## Visión
 
-Voideddimension busca redefinir cómo se siente una dimensión en Minecraft.
+El vacío busca redefinir cómo se siente una dimensión en Minecraft.
 
 No se trata de loot.
 No se trata de progreso tradicional.
@@ -61,9 +62,10 @@ No se trata de progreso tradicional.
 Se trata de experiencia.
 
 Este proyecto apunta a convertirse en una dimensión narrativa donde:
-- Los jefes representan "traumas" o miedos.
+- Los jefes representan manifestaciones o miedos.
 - Los biomas representan estados mentales.
 - El entorno es parte del enemigo.
+
 
 ---
 
