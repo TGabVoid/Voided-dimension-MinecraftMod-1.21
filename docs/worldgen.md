@@ -1,105 +1,79 @@
+# WORLD GENERATION — La Estructura del Vacío
 
+El Vacío no se genera.
 
+Se manifiesta.
 
-Voideddimension está diseñada como una caída estructurada.
+No sigue reglas normales.  
+No respeta simetrías.  
+No busca equilibrio.
 
+Su terreno no parece construido.  
+Parece contenido.
 
+---
 
-No es un plano infinito.
+## Principios de Generación
 
-Es una arquitectura vertical pensada por capas.
+- No hay paisajes “naturales”.
+- No hay progresión cómoda.
+- No hay zonas seguras.
 
+Cada estructura parece tener un propósito.
 
+Cada fragmento parece sostener algo invisible.
 
-\## 1. La Cúpula
+---
 
+## Elementos Clave
 
+### Cúpula de Bedrock
 
-En la parte superior existe una bóveda de bedrock.
+No es decoración.  
+Es límite.
 
-No tiene sentido natural.
+Funciona como una prisión estructural.  
+Una barrera diseñada para contener lo que hay dentro.
 
-Su función no es sostener.
+---
 
-Es sellar.
+### Pilares
 
+No son formaciones geológicas.
 
+Parecen soportes.
 
-Da la sensación de que algo quedó atrapado…
+Como si el mundo estuviera fracturado  
+y alguien intentara evitar su colapso.
 
-o que algo no debe salir.
+---
 
+### Fragmentación del Terreno
 
+Al descender:
 
-\## 2. Los Pilares
+- Las formas se distorsionan.
+- Las alturas pierden coherencia.
+- La gravedad parece inconsistente.
 
+El mundo no es estable.
 
+Está tensionado.
 
-Grandes columnas deformes atraviesan el mundo.
+---
 
-Algunos son sólidos.
+## Sensación General
 
-Otros están huecos.
+El objetivo no es impresionar.
 
-No todos llegan hasta arriba.
+Es incomodar.
 
+La generación del mundo debe transmitir:
 
+- Inestabilidad
+- Duda
+- Presión silenciosa
 
-No parecen formaciones naturales.
+El jugador no explora.
 
-Parecen soportes improvisados.
-
-Como si la realidad estuviera fracturada.
-
-
-
-\## 3. La Zona Central
-
-
-
-Un espacio donde el aire se siente pesado.
-
-El terreno es irregular.
-
-No hay vida.
-
-Solo estructuras que parecen erosionadas por algo invisible.
-
-
-
-\## 4. La Fragmentación
-
-
-
-Más abajo, el mundo deja de comportarse de forma coherente.
-
-Aparecen islas flotantes.
-
-Huecos.
-
-Espacios que parecen incompletos.
-
-
-
-Es como si la dimensión estuviera perdiendo integridad.
-
-
-
-\## 5. El Descenso Final
-
-
-
-Las formas se degradan.
-
-El entorno se vuelve inestable.
-
-La sensación no es exploración.
-
-Es caída.
-
-
-
-Se experimenta verticalmente.
-
-
-
+Desciende.
