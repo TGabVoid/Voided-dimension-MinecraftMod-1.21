@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:random_patch",
+  "config": {
+    "tries": 12,
+    "xz_spread": 3,
+    "y_spread": 1,
+    "feature": {
+      "feature": {
+        "type": "minecraft:simple_block",
+        "config": {
+          "to_place": {
+            "type": "minecraft:simple_state_provider",
+            "state": { "Name": "voideddimension:ashe" }
+          }
+        }
+      },
+      "placement": []
+    }
+  }
+}
+

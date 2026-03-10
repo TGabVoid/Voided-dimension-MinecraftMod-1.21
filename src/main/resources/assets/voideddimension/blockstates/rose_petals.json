@@ -1,0 +1,1732 @@
+{
+    "multipart":  [
+                      {
+                          "when":  {
+                                       "white_petals":  "1|2|3|4|5|6|7|8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "1|2|3|4|5|6|7|8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "1|2|3|4|5|6|7|8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "1|2|3|4|5|6|7|8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot1",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "2|3|4|5|6|7|8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "2|3|4|5|6|7|8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "2|3|4|5|6|7|8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "2|3|4|5|6|7|8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot2",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "3|4|5|6|7|8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "3|4|5|6|7|8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "3|4|5|6|7|8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "3|4|5|6|7|8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot3",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "4|5|6|7|8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "4|5|6|7|8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "4|5|6|7|8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "4|5|6|7|8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot4",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "5|6|7|8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "5|6|7|8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "5|6|7|8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "5|6|7|8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot5",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "6|7|8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "6|7|8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "6|7|8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "6|7|8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot6",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "7|8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "7|8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "7|8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "7|8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot7",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot8",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "white_petals":  "9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/white_slot9",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "1|2|3|4|5|6|7|8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "1|2|3|4|5|6|7|8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "1|2|3|4|5|6|7|8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "1|2|3|4|5|6|7|8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot9",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "2|3|4|5|6|7|8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "2|3|4|5|6|7|8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "2|3|4|5|6|7|8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "2|3|4|5|6|7|8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot8",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "3|4|5|6|7|8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "3|4|5|6|7|8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "3|4|5|6|7|8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "3|4|5|6|7|8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot7",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "4|5|6|7|8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "4|5|6|7|8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "4|5|6|7|8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "4|5|6|7|8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot6",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "5|6|7|8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "5|6|7|8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "5|6|7|8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "5|6|7|8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot5",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "6|7|8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "6|7|8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "6|7|8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "6|7|8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot4",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "7|8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "7|8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "7|8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "7|8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot3",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "8|9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "8|9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "8|9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "8|9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot2",
+                                            "y":  180
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "9",
+                                       "facing":  "north"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  270
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "9",
+                                       "facing":  "east"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  0
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "9",
+                                       "facing":  "south"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  180
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  90
+                                        }
+                                    ]
+                      },
+                      {
+                          "when":  {
+                                       "black_petals":  "9",
+                                       "facing":  "west"
+                                   },
+                          "apply":  [
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  270
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  0
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  90
+                                        },
+                                        {
+                                            "model":  "voideddimension:block/black_slot1",
+                                            "y":  180
+                                        }
+                                    ]
+                      }
+                  ]
+}

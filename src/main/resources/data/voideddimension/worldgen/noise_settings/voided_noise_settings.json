@@ -60,9 +60,9 @@
                   "min_threshold": -0.35,
                   "max_threshold": 0.6
                 },
-                "then_run": { "type": "minecraft:block", "result_state": { "Name": "minecraft:dead_tube_coral_block" } }
+                "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:sand_ashe" } }
               },
-              { "type": "minecraft:block", "result_state": { "Name": "minecraft:clay" } }
+              { "type": "minecraft:block", "result_state": { "Name": "voideddimension:dirt_ashe" } }
             ]
           }
         }

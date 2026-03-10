@@ -7,13 +7,30 @@
   "block.voideddimension.amalgama_block": "Amalgama Block",
   "itemGroup.voided_items": "Voided Items",
   "blockGroup.voided_blocks": "Voided Blocks",
+  "blockGroup.voided_nature": "Voided Nature",
+  "itemGroup.voided_creatures": "Voided Creatures",
 
-  "item.voided_dimension.agonizing_glow.shiftdown.tooltip1": "§eSmall Light§8, §7use §f§lright-click §7to pierce through the void.",
-  "item.voided_dimension.agonizing_glow.shiftdown.tooltip2": "§8§oA trace of light in the abyss... Soon it will go out. ",
-  "item.voided_dimension.agonizing_glow.tooltip": "§7Hold §f§lShift §7to observe its glow",
+  "item.voided_dimension.agonizing_glow.shiftdown.tooltip1": "\u00a7eSmall Light\u00a78, \u00a77use \u00a7f\u00a7lright-click \u00a77to pierce through the void.",
+  "item.voided_dimension.agonizing_glow.shiftdown.tooltip2": "\u00a78\u00a7oA trace of light in the abyss... Soon it will go out. ",
+  "item.voided_dimension.agonizing_glow.tooltip": "\u00a77Hold \u00a7f\u00a7lShift \u00a77to observe its glow",
 
   "entity.voideddimension.puppetman": "Puppetman",
   "item.voideddimension.puppetman_spawn_egg": "Puppetman Spawn Egg",
   "item.voideddimension.void_pass": "Void Pass",
-  "block.voideddimension.fragile_bedrock": "Fragile Bedrock"
+  "block.voideddimension.fragile_bedrock": "Fragile Bedrock",
+
+  "item.voideddimension.white_rose_petal": "White Rose Petal",
+  "item.voideddimension.black_rose_petal": "Black Rose Petal",
+  "block.voideddimension.rose_petals": "Rose Petals",
+
+  "block.voideddimension.void_block": "Void Block",
+  "block.voideddimension.curse_stone_block": "Curse Stone",
+  "block.voideddimension.black_base_block": "Black Base",
+  "block.voideddimension.voided_block": "Voided Block",
+  "block.voideddimension.curse_cobblestone_block": "Curse Cobblestone",
+  "block.voideddimension.grey_stone_block": "Grey Stone",
+  "block.voideddimension.black_stone_block": "Black Stone",
+  "block.voideddimension.sand_ashe": "Ash Sand",
+  "block.voideddimension.dirt_ashe": "Ash Dirt",
+  "block.voideddimension.ashe": "Ash"
 }

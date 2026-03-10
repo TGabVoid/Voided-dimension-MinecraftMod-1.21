@@ -11,9 +11,8 @@
           "to_place": {
             "type": "minecraft:weighted_state_provider",
             "entries": [
-              { "weight": 6, "data": { "Name": "minecraft:dead_tube_coral_block" } },
-              { "weight": 3, "data": { "Name": "minecraft:pink_terracotta" } },
-              { "weight": 1, "data": { "Name": "minecraft:magenta_glazed_terracotta" } }
+              { "weight": 6, "data": { "Name": "voideddimension:sand_ashe" } },
+              { "weight": 3, "data": { "Name": "voideddimension:dirt_ashe" } }
             ]
           }
         }

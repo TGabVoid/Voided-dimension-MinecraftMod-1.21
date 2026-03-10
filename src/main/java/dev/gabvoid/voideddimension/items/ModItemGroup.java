@@ -22,7 +22,9 @@ public class ModItemGroup
                         entries.add(new ItemStack(ModItems.AMALGAMA));
                         entries.add(new ItemStack(ModItems.AGONIZING_GLOW));
                         entries.add(new ItemStack(ModItems.BLACK_ROSEHIP));
-
+                        entries.add(new ItemStack(ModItems.VOID_PASS));
+                        entries.add(new ItemStack(ModItems.WHITE_ROSE_PETAL));
+                        entries.add(new ItemStack(ModItems.BLACK_ROSE_PETAL));
                     } ))
 
                     .build());
@@ -37,6 +39,43 @@ public class ModItemGroup
                         entries.add(new ItemStack(ModBlocks.AMALGAMA_BLOCK));
                         entries.add(new ItemStack(ModBlocks.AMALGAMA_ORE_BLOCK));
                         entries.add(new ItemStack(ModBlocks.AGONIZING_LIGHT_TRAIL));
+                        entries.add(new ItemStack(ModBlocks.VOID_BLOCK));
+                        entries.add(new ItemStack(ModBlocks.CURSE_STONE_BLOCK));
+                        entries.add(new ItemStack(ModBlocks.BLACK_BASE_BLOCK));
+                        entries.add(new ItemStack(ModBlocks.VOIDED_BLOCK));
+                        entries.add(new ItemStack(ModBlocks.CURSE_COBBLESTONE_BLOCK));
+                        entries.add(new ItemStack(ModBlocks.GREY_STONE_BLOCK));
+                        entries.add(new ItemStack(ModBlocks.BLACK_STONE_BLOCK));
+                        entries.add(new ItemStack(ModBlocks.FRAGILE_BEDROCK));
+                        entries.add(new ItemStack(ModBlocks.SAND_ASHE));
+                        entries.add(new ItemStack(ModBlocks.DIRT_ASHE));
+                        entries.add(new ItemStack(ModBlocks.ASHE));
+                    } ))
+
+                    .build());
+
+    public static final ItemGroup VOIDED_NATURE = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(VoidedDimension.MOD_ID, "voided_nature"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModBlocks.ASHE))
+                    .displayName(Text.translatable("blockGroup.voided_nature"))
+                    .entries(((displayContext, entries) ->
+                    {
+                        entries.add(new ItemStack(ModBlocks.AMALGAMA_ORE_BLOCK));
+                        entries.add(new ItemStack(ModBlocks.FRAGILE_BEDROCK));
+                        entries.add(new ItemStack(ModBlocks.SAND_ASHE));
+                        entries.add(new ItemStack(ModBlocks.DIRT_ASHE));
+                        entries.add(new ItemStack(ModBlocks.ASHE));
+                    } ))
+
+                    .build());
+
+    public static final ItemGroup VOIDED_CREATURES = Registry.register(Registries.ITEM_GROUP,
+            Identifier.of(VoidedDimension.MOD_ID, "voided_creatures"),
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PUPPETMAN_SPAWN_EGG))
+                    .displayName(Text.translatable("itemGroup.voided_creatures"))
+                    .entries(((displayContext, entries) ->
+                    {
+                        entries.add(new ItemStack(ModItems.PUPPETMAN_SPAWN_EGG));
                     } ))
 
                     .build());

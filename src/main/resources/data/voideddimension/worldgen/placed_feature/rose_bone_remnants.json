@@ -20,7 +20,7 @@
           {
             "type": "minecraft:matching_blocks",
             "offset": [ 0, -1, 0 ],
-            "blocks": [ "minecraft:clay", "minecraft:pink_terracotta", "minecraft:smooth_sandstone" ]
+            "blocks": [ "voideddimension:dirt_ashe", "voideddimension:sand_ashe", "minecraft:smooth_sandstone" ]
           }
         ]
       }

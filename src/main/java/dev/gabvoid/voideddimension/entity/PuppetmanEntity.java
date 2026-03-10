@@ -21,9 +21,19 @@ import java.util.Collections;
 import java.util.List;
 
 public class PuppetmanEntity extends HostileEntity implements GeoEntity {
-    private static final RawAnimation IDLE_ANIM = RawAnimation.begin().thenLoop("idle");
+    private static final String[] AUTO_ANIMS = new String[] {
+        "IDLE",
+        "pulgar",
+        "indice",
+        "medio",
+        "anular",
+        "menique"
+    };
+    private static final int AUTO_ANIM_TICKS = 100;
     private final AnimatableInstanceCache cache = GeckoLibUtil.createInstanceCache(this);
     private String forcedAnim = "none";
+    private String currentAnim = AUTO_ANIMS[0];
+    private int animIndex = 0;
 
     public PuppetmanEntity(EntityType<? extends HostileEntity> entityType, World world) {
         super(entityType, world);
@@ -46,19 +56,41 @@ public class PuppetmanEntity extends HostileEntity implements GeoEntity {
     }
 
     @Override
+    public void tick() {
+        super.tick();
+        if (!"none".equalsIgnoreCase(this.forcedAnim)) {
+            return;
+        }
+        if ((this.age % AUTO_ANIM_TICKS) == 0) {
+            this.animIndex = (this.animIndex + 1) % AUTO_ANIMS.length;
+            this.currentAnim = AUTO_ANIMS[this.animIndex];
+        }
+    }
+
+    @Override
     public void registerControllers(ControllerRegistrar controllers) {
         controllers.add(new AnimationController<>(this, "controller", 0, state -> {
             if (!"none".equalsIgnoreCase(forcedAnim)) {
                 state.setAndContinue(RawAnimation.begin().thenLoop(forcedAnim));
             } else {
-                state.setAndContinue(IDLE_ANIM);
+                state.setAndContinue(RawAnimation.begin().thenLoop(currentAnim));
             }
             return PlayState.CONTINUE;
         }));
     }
 
     public void setDebugAnim(String anim) {
-        this.forcedAnim = (anim == null || anim.isBlank()) ? "none" : anim.toLowerCase();
+        if (anim == null || anim.isBlank()) {
+            this.forcedAnim = "none";
+        } else if ("idle".equalsIgnoreCase(anim)) {
+            this.forcedAnim = "IDLE";
+        } else {
+            this.forcedAnim = anim.toLowerCase();
+        }
+        if ("none".equalsIgnoreCase(this.forcedAnim)) {
+            this.animIndex = 0;
+            this.currentAnim = AUTO_ANIMS[0];
+        }
         this.setAiDisabled(!"none".equalsIgnoreCase(this.forcedAnim));
     }
 

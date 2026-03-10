@@ -1,7 +1,0 @@
-{
-  "parent": "minecraft:block/block",
-  "textures": {
-    "all": "voideddimension:block/white_rose_petals_4"
-  }
-}
-

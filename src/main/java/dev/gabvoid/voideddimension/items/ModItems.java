@@ -2,6 +2,8 @@ package dev.gabvoid.voideddimension.items;
 
 import dev.gabvoid.voideddimension.VoidedDimension;
 import dev.gabvoid.voideddimension.items.custom.AgonizingGlowItem;
+import dev.gabvoid.voideddimension.items.custom.RosePetalItem;
+import dev.gabvoid.voideddimension.blocks.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
@@ -17,6 +19,8 @@ public class ModItems
     public static final Item AGONIZING_GLOW = registerItem("agonizing_glow", new AgonizingGlowItem(new Item.Settings()));
     public static final Item BLACK_ROSEHIP = registerItem("black_rosehip", new Item(new Item.Settings().food(ModFoodComponents.BLACK_ROSEHIP)));
     public static final Item VOID_PASS = registerItem("void_pass", new Item(new Item.Settings().maxCount(1)));
+    public static final Item WHITE_ROSE_PETAL = registerItem("white_rose_petal", new RosePetalItem(ModBlocks.ROSE_PETALS, new Item.Settings(), true));
+    public static final Item BLACK_ROSE_PETAL = registerItem("black_rose_petal", new RosePetalItem(ModBlocks.ROSE_PETALS, new Item.Settings(), false));
 
     // Spawn Egg Puppetman (colores base y manchas en formato RGB hex)
     public static final Item PUPPETMAN_SPAWN_EGG = registerItem(
@@ -37,6 +41,8 @@ public class ModItems
             entries.add(AMALGAMA);
             entries.add(BLACK_ROSEHIP);
             entries.add(VOID_PASS);
+            entries.add(WHITE_ROSE_PETAL);
+            entries.add(BLACK_ROSE_PETAL);
         });
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.FOOD_AND_DRINK).register(entries -> {

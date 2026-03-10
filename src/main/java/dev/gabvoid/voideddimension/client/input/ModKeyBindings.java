@@ -1,6 +1,7 @@
 package dev.gabvoid.voideddimension.client.input;
 
-import dev.gabvoid.voideddimension.client.screen.ArcaneAdvancementsScreen;
+import dev.gabvoid.voideddimension.client.screen.ArcaneAdvanceScreen;
+import dev.gabvoid.voideddimension.client.screen.ArcaneQuickwheelScreen;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.MinecraftClient;
@@ -38,18 +39,56 @@ public final class ModKeyBindings {
             return;
         }
 
-        if (openArcaneScreen9.wasPressed() || openArcaneScreen0.wasPressed()) {
-            toggleArcaneScreen(client);
+        if (openArcaneScreen9.wasPressed()) {
+            toggleAdvancements(client);
         }
+
+        if (openArcaneScreen0.wasPressed()) {
+            toggleQuickwheel(client);
+        }
+
+        keepMovementWhileQuickwheel(client);
     }
 
-    private static void toggleArcaneScreen(MinecraftClient client) {
-        if (client.currentScreen instanceof ArcaneAdvancementsScreen) {
+    private static void keepMovementWhileQuickwheel(MinecraftClient client) {
+        if (!(client.currentScreen instanceof ArcaneQuickwheelScreen)) {
+            return;
+        }
+
+        long window = client.getWindow().getHandle();
+        setPressed(client.options.forwardKey, window);
+        setPressed(client.options.backKey, window);
+        setPressed(client.options.leftKey, window);
+        setPressed(client.options.rightKey, window);
+        setPressed(client.options.jumpKey, window);
+        setPressed(client.options.sprintKey, window);
+        setPressed(client.options.sneakKey, window);
+    }
+
+    private static void setPressed(KeyBinding binding, long window) {
+        InputUtil.Key key = InputUtil.fromTranslationKey(binding.getBoundKeyTranslationKey());
+        int code = key.getCode();
+        boolean pressed = key.getCategory() == InputUtil.Type.MOUSE
+            ? GLFW.glfwGetMouseButton(window, code) == GLFW.GLFW_PRESS
+            : InputUtil.isKeyPressed(window, code);
+        binding.setPressed(pressed);
+    }
+
+    private static void toggleAdvancements(MinecraftClient client) {
+        if (client.currentScreen instanceof ArcaneAdvanceScreen) {
             client.setScreen(null);
             return;
         }
 
-        client.setScreen(new ArcaneAdvancementsScreen());
+        client.setScreen(new ArcaneAdvanceScreen());
+    }
+
+    private static void toggleQuickwheel(MinecraftClient client) {
+        if (client.currentScreen instanceof ArcaneQuickwheelScreen) {
+            client.setScreen(null);
+            return;
+        }
+
+        client.setScreen(new ArcaneQuickwheelScreen());
     }
 }
-

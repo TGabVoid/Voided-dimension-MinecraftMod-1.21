@@ -1,50 +1,50 @@
-/give @p voideddimension:void_pass
-/kill
-/give @p voideddimension:void_pass
-/kill
-/give @p voideddimension:void_pass
+/tp @s 3353 303 -2468
+/execute in voideddimension:voided_dimension run tp @s 1245 300 12451
 /locate biome voideddimension:fragmented_plains
-/locate biome voideddimension:inactive_threshold
-/tp @s 1740 361 -1637
-/kil
-/kill
-/give @p voideddimension:void_pass
-/kil
-/kill
-/give @p voideddimension:void_pass
-/effect give @p minecraft:night_vision infinite
-/tp @p 1241223 500 21
-/execute in voideddimension:voided_dimension run tp @p 213 510 213
-/execute in voideddimension:voided_dimension run tp @p 534 510 12
-/kill
-/effect give @p minecraft:night_vision infinite
-/give @p voideddimension:void_pass
+/tp @s 933 327 12103
+/effect give @s minecraft:darkness
 /effect clear
-/give @p voideddimension:puppetman_spawn_egg
-/effect give @p minecraft:night_vision infinite
-/give @p voideddimension:void_block
-/give @p voideddimension:black_stone_block
-/give @p voideddimension:grey_stone_block
-/give @p voideddimension:agonizing_glow
-/kill
-/effect give @p minecraft:night_vision infinite
-/give @p voideddimension:void_pass
 /locate biome voideddimension:rose_desert
-/tp @s 280 11 -579
-/tp @p -0453 300 4324
+/tp @s 1230 17 12271
+/tp @s 8878 300 -634
 /locate biome voideddimension:rose_desert
-/tp @s -357 383 4548
-/locate biome voideddimension:fragmented_plains
-/tp @s -3015 353 6072
+/tp @s 9230 300 -442
+/give @s voideddimension:white_rose_petal
+/give @s voideddimension:black_rose_petal
+/give @s voideddimension:ashe
+/execute in voideddimension:voided_dimension run tp @s 1245 300 12451
+/xp add Player797 0
+/xp add Player797 0 levels
+/xp set Player797 0
+/xp set Player797 0 levels
 /summon voideddimension:puppetman
+/locate biome voideddimension:inactive_threshold
+/tp @s 1562 359 12184
+/locate biome voideddimension:inactive_threshold
 /locate biome voideddimension:fragmented_plains
-/tp @s -3030 353 6081
-/tp @s 23523 5235
-/tp @s 23523 300 1241
-/locate biome voideddimension:fragmented_plains
-/tp @s 24899 300 -1543
-/effect clear @ss
-/effect clear @s
+/tp @s -902 359 15416
+/summon voideddimension:puppetman
+/effect give Player797 minecraft:darkness
+/execute in voideddimension:voided_dimension run tp @s 1245 300 12451
+/execute in voideddimension:voided_dimension run tp @s 1245 69 12451
+/kill
+/execute in voideddimension:voided_dimension run tp @s 1245 300 12451
+/execute in voideddimension:voided_dimension run tp @s 1245 9 12451
+/give @s voideddimension:fragile_bedrock
+/give @s voideddimension:ashe
+/give @s voideddimension:void_pass
+/give @s voideddimension:voided_block
+/give @s voideddimension:void_block
+/give @s voideddimension:curse_stone_block
+/give @s voideddimension:dirt_ashe
+/give @s voideddimension:sand_ashe
+/give @s voideddimension:black_stone_block
+/effect clear
+/locate biome voideddimension:inactive_threshold
+/tp @s 966 363 12094
 /locate biome voideddimension:rose_desert
-/tp @s 25154 354 -1455
-/tp @s 234744 423 -234234
+/tp @s 1386 186 12171
+/locate biome voideddimension:inactive_threshold
+/tp @s 1170 349 12087
+/locate biome voideddimension:rose_desert
+/tp @s 1392 364 12168

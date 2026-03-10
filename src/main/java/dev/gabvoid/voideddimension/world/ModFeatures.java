@@ -4,6 +4,7 @@ import dev.gabvoid.voideddimension.VoidedDimension;
 import dev.gabvoid.voideddimension.world.feature.BedrockFragmentHoleFeature;
 import dev.gabvoid.voideddimension.world.feature.FragmentedEdgesFeature;
 import dev.gabvoid.voideddimension.world.feature.PillarFeature;
+import dev.gabvoid.voideddimension.world.feature.RosePetalsFeature;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.minecraft.registry.Registries;
@@ -42,6 +43,12 @@ public class ModFeatures {
             Registries.FEATURE,
             Identifier.of(VoidedDimension.MOD_ID, "bedrock_hole"),
             new BedrockFragmentHoleFeature(DefaultFeatureConfig.CODEC)
+    );
+
+    private static final Feature<DefaultFeatureConfig> ROSE_PETALS_FEATURE = Registry.register(
+            Registries.FEATURE,
+            Identifier.of(VoidedDimension.MOD_ID, "rose_petals"),
+            new RosePetalsFeature(DefaultFeatureConfig.CODEC)
     );
 
     public static void register() {

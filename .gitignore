@@ -49,3 +49,8 @@ crash-reports/
 *.zip
 .cache
 
+
+# Runtime worlds/logs
+run/
+run_fresh/
+*.lock

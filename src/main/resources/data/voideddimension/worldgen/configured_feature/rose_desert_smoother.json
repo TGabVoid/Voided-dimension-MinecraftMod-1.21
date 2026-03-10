@@ -11,8 +11,8 @@
           "to_place": {
             "type": "minecraft:weighted_state_provider",
             "entries": [
-              { "weight": 5, "data": { "Name": "minecraft:clay" } },
-              { "weight": 1, "data": { "Name": "minecraft:moss_carpet" } }
+              { "weight": 5, "data": { "Name": "voideddimension:dirt_ashe" } },
+              { "weight": 1, "data": { "Name": "voideddimension:sand_ashe" } }
             ]
           }
         }

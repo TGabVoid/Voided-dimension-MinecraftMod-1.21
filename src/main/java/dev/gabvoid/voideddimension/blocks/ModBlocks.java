@@ -4,7 +4,9 @@ import com.ibm.icu.message2.Mf2DataModel;
 import com.mojang.serialization.MapCodec;
 import dev.gabvoid.voideddimension.VoidedDimension;
 import dev.gabvoid.voideddimension.blocks.custom.ParticleBlock;
+import dev.gabvoid.voideddimension.blocks.custom.RosePetalsBlock;
 import dev.gabvoid.voideddimension.blocks.custom.SafeBlock;
+import dev.gabvoid.voideddimension.blocks.custom.MixedPetalsBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -141,6 +143,37 @@ public class ModBlocks {
                     .strength(0.8F, 0.5F))
     );
 
+    public static final Block SAND_ASHE = registerBlock(
+            "sand_ashe",
+            new Block(AbstractBlock.Settings.create()
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.SAND))
+    );
+
+    public static final Block DIRT_ASHE = registerBlock(
+            "dirt_ashe",
+            new Block(AbstractBlock.Settings.create()
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.GRAVEL))
+    );
+
+    public static final Block ASHE = registerBlock(
+            "ashe",
+            new Block(AbstractBlock.Settings.create()
+                    .strength(0.6f)
+                    .sounds(BlockSoundGroup.SAND))
+    );
+
+    public static final Block ROSE_PETALS = registerBlockWithoutItem(
+            "rose_petals",
+            new MixedPetalsBlock(AbstractBlock.Settings.create()
+                    .noCollision()
+                    .replaceable()
+                    .strength(0.1f)
+                    .sounds(BlockSoundGroup.GRASS)
+                    .nonOpaque())
+    );
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(VoidedDimension.MOD_ID, name), block);
@@ -162,6 +195,10 @@ public class ModBlocks {
                 });
     }
 
+    private static Block registerBlockWithoutItem(String name, Block block) {
+        return Registry.register(Registries.BLOCK, Identifier.of(VoidedDimension.MOD_ID, name), block);
+    }
+
     public static void registerModBlocks() {
         VoidedDimension.LOGGER.info("Registering ModBlocks for " + VoidedDimension.MOD_ID);
 
@@ -172,6 +209,7 @@ public class ModBlocks {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.NATURAL).register(entries -> {
             entries.add(AMALGAMA_ORE_BLOCK);
             entries.add(FRAGILE_BEDROCK);
+            entries.add(ASHE);
         });
     }
 }

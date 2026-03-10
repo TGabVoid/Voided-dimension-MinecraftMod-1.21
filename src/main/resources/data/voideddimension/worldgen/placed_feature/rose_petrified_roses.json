@@ -20,7 +20,7 @@
           {
             "type": "minecraft:matching_blocks",
             "offset": [ 0, -1, 0 ],
-            "blocks": [ "minecraft:clay", "minecraft:dead_tube_coral_block" ]
+            "blocks": [ "voideddimension:dirt_ashe", "voideddimension:sand_ashe" ]
           }
         ]
       }
