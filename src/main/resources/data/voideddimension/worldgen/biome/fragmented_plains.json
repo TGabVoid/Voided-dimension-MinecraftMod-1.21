@@ -39,7 +39,9 @@
   },
   "features": [
     [
-      "voideddimension:fragmented_edges"
+      "voideddimension:fragmented_edges",
+      "voideddimension:dry_cracks",
+      "voideddimension:abyssal_fuste_feature"
     ],
     [],
     [],

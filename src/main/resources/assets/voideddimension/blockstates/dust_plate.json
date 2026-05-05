@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "axis=y": { "model": "voideddimension:block/dust_plate" },
+    "axis=z": { "model": "voideddimension:block/dust_plate", "x": 90 },
+    "axis=x": { "model": "voideddimension:block/dust_plate", "x": 90, "y": 90 }
+  }
+}
+

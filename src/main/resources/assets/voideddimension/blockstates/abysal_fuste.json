@@ -1,0 +1,7 @@
+{
+  "variants": {
+	"axis=y": { "model": "voideddimension:block/abysal_fuste" },
+	"axis=z": { "model": "voideddimension:block/abysal_fuste", "x": 90 },
+	"axis=x": { "model": "voideddimension:block/abysal_fuste", "x": 90, "y": 90 }
+  }
+}

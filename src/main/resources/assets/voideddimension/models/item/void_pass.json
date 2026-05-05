@@ -1,7 +1,7 @@
 {
-  "parent": "item/generated",
+  "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "voideddimension:item/void_pass"
+    "layer0": "voideddimension:block/ashe"
   }
 }
 

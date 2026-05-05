@@ -28,6 +28,21 @@ public class ModItems
             new SpawnEggItem(ModEntities.PUPPETMAN, 0x2B2B2B, 0xB43B3B, new Item.Settings())
     );
 
+    public static final Item WANDERING_FRAGMENT_SPAWN_EGG = registerItem(
+            "wandering_fragment_spawn_egg",
+            new SpawnEggItem(ModEntities.WANDERING_FRAGMENT, 0x2A2D35, 0x6F7480, new Item.Settings())
+    );
+
+    public static final Item FRAGMENT_SUMMONER_SPAWN_EGG = registerItem(
+            "fragment_summoner_spawn_egg",
+            new SpawnEggItem(ModEntities.FRAGMENT_SUMMONER, 0x2D2A31, 0x8B7D6A, new Item.Settings())
+    );
+
+    public static final Item ERRATIC_SPAWN_EGG = registerItem(
+            "erratic_spawn_egg",
+            new SpawnEggItem(ModEntities.ERRATIC, 0x28322B, 0x63C77A, new Item.Settings())
+    );
+
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(VoidedDimension.MOD_ID, name), item);
     }
@@ -56,6 +71,9 @@ public class ModItems
 
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.SPAWN_EGGS).register(entries -> {
             entries.add(PUPPETMAN_SPAWN_EGG);
+            entries.add(WANDERING_FRAGMENT_SPAWN_EGG);
+            entries.add(FRAGMENT_SUMMONER_SPAWN_EGG);
+            entries.add(ERRATIC_SPAWN_EGG);
         });
     }
 }

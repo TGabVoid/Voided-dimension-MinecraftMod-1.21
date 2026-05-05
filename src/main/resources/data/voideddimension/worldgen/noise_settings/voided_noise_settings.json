@@ -36,7 +36,132 @@
           "surface_depth_multiplier": 0,
           "add_stone_depth": false
         },
-        "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:curse_cobblestone_block" } }
+        "then_run": {
+          "type": "minecraft:sequence",
+          "sequence": [
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:stone_depth",
+                "offset": 0,
+                "add_surface_depth": false,
+                "secondary_depth_range": 0,
+                "surface_type": "floor"
+              },
+              "then_run": {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:y_above",
+                  "anchor": { "absolute": 325 },
+                  "surface_depth_multiplier": 0,
+                  "add_stone_depth": false
+                },
+                "then_run": {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:not",
+                    "invert": {
+                      "type": "minecraft:y_above",
+                      "anchor": { "absolute": 351 },
+                      "surface_depth_multiplier": 0,
+                      "add_stone_depth": false
+                    }
+                  },
+                  "then_run": {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "voideddimension:surface_pattern_breaker",
+                      "min_threshold": -1.0,
+                      "max_threshold": -0.15
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "voideddimension:surface_selector",
+                            "min_threshold": -1.0,
+                            "max_threshold": -0.35
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "voideddimension:void_block",
+                              "Properties": { "facing": "north" }
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "voideddimension:surface_selector",
+                            "min_threshold": -0.35,
+                            "max_threshold": 0.05
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "voideddimension:void_block",
+                              "Properties": { "facing": "south" }
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "voideddimension:surface_selector",
+                            "min_threshold": 0.05,
+                            "max_threshold": 0.45
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "voideddimension:void_block",
+                              "Properties": { "facing": "east" }
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "voideddimension:void_block",
+                            "Properties": { "facing": "west" }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:noise_threshold",
+                "noise": "voideddimension:first_surface_cracks",
+                "min_threshold": -1.0,
+                "max_threshold": -0.2
+              },
+              "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:curse_cobblestone_block" } }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:noise_threshold",
+                "noise": "voideddimension:surface_pattern_breaker",
+                "min_threshold": 0.72,
+                "max_threshold": 1.0
+              },
+              "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:grey_stone_block" } }
+            },
+            { "type": "minecraft:block", "result_state": { "Name": "voideddimension:curse_stone_block" } }
+          ]
+        }
       },
       {
         "type": "minecraft:condition",
@@ -71,29 +196,35 @@
         "type": "minecraft:condition",
         "if_true": {
           "type": "minecraft:y_above",
-          "anchor": { "absolute": 290 },
+          "anchor": { "absolute": 260 },
           "surface_depth_multiplier": 0,
           "add_stone_depth": false
         },
         "then_run": {
-          "type": "minecraft:condition",
-          "if_true": { "type": "minecraft:biome", "biome_is": [ "voideddimension:fragmented_plains" ] },
-          "then_run": {
-            "type": "minecraft:sequence",
-            "sequence": [
-              {
-                "type": "minecraft:condition",
-                "if_true": {
-                  "type": "minecraft:noise_threshold",
-                  "noise": "voideddimension:fragmented_vertical_fractures",
-                  "min_threshold": -0.35,
-                  "max_threshold": 0.6
-                },
-                "then_run": { "type": "minecraft:block", "result_state": { "Name": "minecraft:cobblestone" } }
+          "type": "minecraft:sequence",
+          "sequence": [
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:noise_threshold",
+                "noise": "voideddimension:first_surface_cracks",
+                "min_threshold": -1.0,
+                "max_threshold": -0.25
               },
-              { "type": "minecraft:block", "result_state": { "Name": "minecraft:stone" } }
-            ]
-          }
+              "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:curse_cobblestone_block" } }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:noise_threshold",
+                "noise": "voideddimension:surface_pattern_breaker",
+                "min_threshold": 0.80,
+                "max_threshold": 1.0
+              },
+              "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:grey_stone_block" } }
+            },
+            { "type": "minecraft:block", "result_state": { "Name": "voideddimension:curse_stone_block" } }
+          ]
         }
       },
       {
@@ -140,7 +271,221 @@
           }
         }
       },
-      { "type": "minecraft:block", "result_state": { "Name": "voideddimension:curse_cobblestone_block" } }
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:y_above",
+          "anchor": { "absolute": 170 },
+          "surface_depth_multiplier": 0,
+          "add_stone_depth": false
+        },
+        "then_run": {
+          "type": "minecraft:sequence",
+          "sequence": [
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:noise_threshold",
+                "noise": "voideddimension:second_zone_base",
+                "min_threshold": -1.0,
+                "max_threshold": -0.18
+              },
+              "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:black_stone_block" } }
+            },
+            { "type": "minecraft:block", "result_state": { "Name": "voideddimension:grey_stone_block" } }
+          ]
+        }
+      },
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:y_above",
+          "anchor": { "absolute": 90 },
+          "surface_depth_multiplier": 0,
+          "add_stone_depth": false
+        },
+        "then_run": {
+          "type": "minecraft:sequence",
+          "sequence": [
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:noise_threshold",
+                "noise": "voideddimension:third_zone_base",
+                "min_threshold": -1.0,
+                "max_threshold": -0.12
+              },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "voideddimension:third_zone_cavities",
+                      "min_threshold": -1.0,
+                      "max_threshold": -0.2
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "voideddimension:black_base_block",
+                        "Properties": { "axis": "x" }
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "voideddimension:third_zone_cavities",
+                      "min_threshold": -0.2,
+                      "max_threshold": 0.35
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "voideddimension:black_base_block",
+                        "Properties": { "axis": "z" }
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "voideddimension:black_base_block",
+                      "Properties": { "axis": "y" }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:noise_threshold",
+                "noise": "voideddimension:third_zone_cavities",
+                "min_threshold": 0.52,
+                "max_threshold": 1.0
+              },
+              "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:grey_stone_block" } }
+            },
+            { "type": "minecraft:block", "result_state": { "Name": "voideddimension:black_stone_block" } }
+          ]
+        }
+      },
+      {
+        "type": "minecraft:sequence",
+        "sequence": [
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:noise_threshold",
+              "noise": "voideddimension:lower_zone_mass",
+              "min_threshold": -1.0,
+              "max_threshold": 0.22
+            },
+            "then_run": {
+              "type": "minecraft:sequence",
+              "sequence": [
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "voideddimension:lower_zone_mass",
+                    "min_threshold": -1.0,
+                    "max_threshold": -0.25
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "voideddimension:black_base_block",
+                      "Properties": { "axis": "x" }
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "voideddimension:lower_zone_mass",
+                    "min_threshold": -0.25,
+                    "max_threshold": 0.3
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "voideddimension:black_base_block",
+                      "Properties": { "axis": "z" }
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "voideddimension:black_base_block",
+                    "Properties": { "axis": "y" }
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:noise_threshold",
+              "noise": "voideddimension:lower_zone_base",
+              "min_threshold": -1.0,
+              "max_threshold": -0.58
+            },
+            "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:black_stone_block" } }
+          },
+          {
+            "type": "minecraft:sequence",
+            "sequence": [
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:noise_threshold",
+                  "noise": "voideddimension:lower_zone_cavities",
+                  "min_threshold": -1.0,
+                  "max_threshold": -0.18
+                },
+                "then_run": {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "voideddimension:voided_block",
+                    "Properties": { "axis": "x" }
+                  }
+                }
+              },
+              {
+                "type": "minecraft:condition",
+                "if_true": {
+                  "type": "minecraft:noise_threshold",
+                  "noise": "voideddimension:lower_zone_cavities",
+                  "min_threshold": -0.18,
+                  "max_threshold": 0.32
+                },
+                "then_run": {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "voideddimension:voided_block",
+                    "Properties": { "axis": "z" }
+                  }
+                }
+              },
+              {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "voideddimension:voided_block",
+                  "Properties": { "axis": "y" }
+                }
+              }
+            ]
+          }
+        ]
+      }
     ]
   },
   "noise": { "min_y": 0, "height": 512, "size_horizontal": 1, "size_vertical": 1 },

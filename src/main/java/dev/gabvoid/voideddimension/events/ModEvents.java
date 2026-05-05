@@ -2,6 +2,9 @@ package dev.gabvoid.voideddimension.events;
 
 import dev.gabvoid.voideddimension.VoidedDimension;
 import dev.gabvoid.voideddimension.blocks.ModBlocks;
+import dev.gabvoid.voideddimension.entity.ModEntities;
+import dev.gabvoid.voideddimension.entity.WanderingFragmentEntity;
+import dev.gabvoid.voideddimension.entity.ErraticEntity;
 import dev.gabvoid.voideddimension.items.ModItems;
 import dev.gabvoid.voideddimension.items.custom.AgonizingGlowItem;
 import dev.gabvoid.voideddimension.world.ModDimensions;
@@ -18,7 +21,9 @@ import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
@@ -48,6 +53,20 @@ public class ModEvents
     private static final Set<UUID> VOID_PASS_PENDING_BREAK = new HashSet<>();
     private static final Set<Long> FRAGILE_QUEUED = new HashSet<>();
     private static final Deque<ChunkPos> FRAGILE_QUEUE = new ArrayDeque<>();
+    private static final int FRAGMENT_SPAWN_CHECK_INTERVAL = 40;
+    private static final double FRAGMENT_SPAWN_CHANCE = 0.35;
+    private static final int FRAGMENT_MAX_NEAR_PLAYER = 6;
+    private static final int FRAGMENT_ANCHOR_RADIUS = 18;
+    private static final int FRAGMENT_ANCHOR_Y_RANGE = 10;
+    private static final int FRAGMENT_ANCHOR_SEARCH_TRIES = 60;
+    private static final int FRAGMENT_SPAWN_POS_TRIES = 16;
+    private static final int ERRATIC_SPAWN_CHECK_INTERVAL = 60;
+    private static final double ERRATIC_SPAWN_CHANCE = 0.50;
+    private static final int ERRATIC_MAX_NEAR_PLAYER = 4;
+    private static final int ERRATIC_ANCHOR_RADIUS = 12;
+    private static final int ERRATIC_ANCHOR_Y_RANGE = 8;
+    private static final int ERRATIC_ANCHOR_SEARCH_TRIES = 30;
+    private static final int ERRATIC_SPAWN_POS_TRIES = 8;
 
     private static void drainFragileBedrockQueue(ServerWorld world) {
         for (int i = 0; i < FRAGILE_PATCH_PER_TICK; i++) {
@@ -98,6 +117,8 @@ public class ModEvents
                 handleVoidFallTeleport(server, player);
                 handleInitialBedrockHoleTeleport(server, player);
                 handleVoidPassLanding(server, player);
+                handleWanderingFragmentSpawns(server, player);
+                handleErraticSpawns(server, player);
             }
 
             ServerWorld overworld = server.getWorld(World.OVERWORLD);
@@ -207,6 +228,129 @@ public class ModEvents
         VOID_PASS_INVULN.remove(playerId);
         serverPlayer.setInvulnerable(false);
         serverPlayer.teleport(targetWorld, targetX, targetY, targetZ, serverPlayer.getYaw(), serverPlayer.getPitch());
+    }
+
+    private static void handleWanderingFragmentSpawns(MinecraftServer server, PlayerEntity player) {
+        if (!(player instanceof ServerPlayerEntity serverPlayer)) return;
+        if (serverPlayer.getWorld().getRegistryKey() != ModDimensions.VOIDED_DIMENSION_KEY) return;
+        if ((server.getTicks() % FRAGMENT_SPAWN_CHECK_INTERVAL) != 0) return;
+
+        ServerWorld world = serverPlayer.getServerWorld();
+        Random random = world.getRandom();
+        if (random.nextDouble() > FRAGMENT_SPAWN_CHANCE) return;
+
+        Box localBox = new Box(serverPlayer.getBlockPos()).expand(30, 20, 30);
+        int nearby = world.getEntitiesByClass(WanderingFragmentEntity.class, localBox, Entity::isAlive).size();
+        if (nearby >= FRAGMENT_MAX_NEAR_PLAYER) return;
+
+        BlockPos anchor = findFragmentAnchor(world, serverPlayer.getBlockPos(), random);
+        if (anchor == null) return;
+
+        BlockPos spawnPos = findFragmentSpawnPos(world, anchor, random);
+        if (spawnPos == null) return;
+
+        WanderingFragmentEntity fragment = ModEntities.WANDERING_FRAGMENT.create(world);
+        if (fragment == null) return;
+
+        fragment.refreshPositionAndAngles(spawnPos.getX() + 0.5, spawnPos.getY() + 0.1, spawnPos.getZ() + 0.5,
+                random.nextFloat() * 360.0f, 0.0f);
+        world.spawnEntity(fragment);
+    }
+
+    private static BlockPos findFragmentAnchor(ServerWorld world, BlockPos center, Random random) {
+        BlockPos.Mutable pos = new BlockPos.Mutable();
+        for (int i = 0; i < FRAGMENT_ANCHOR_SEARCH_TRIES; i++) {
+            int x = center.getX() + random.nextBetween(-FRAGMENT_ANCHOR_RADIUS, FRAGMENT_ANCHOR_RADIUS);
+            int y = Math.max(world.getBottomY() + 1,
+                    Math.min(world.getTopY() - 2, center.getY() + random.nextBetween(-FRAGMENT_ANCHOR_Y_RANGE, FRAGMENT_ANCHOR_Y_RANGE)));
+            int z = center.getZ() + random.nextBetween(-FRAGMENT_ANCHOR_RADIUS, FRAGMENT_ANCHOR_RADIUS);
+            pos.set(x, y, z);
+            if (isFragmentAnchorBlock(world, pos)) {
+                return pos.toImmutable();
+            }
+        }
+        return null;
+    }
+
+    private static BlockPos findFragmentSpawnPos(ServerWorld world, BlockPos anchor, Random random) {
+        int anchorTopY = anchor.getY();
+        BlockPos.Mutable topProbe = new BlockPos.Mutable(anchor.getX(), anchor.getY(), anchor.getZ());
+        int maxTop = Math.min(world.getTopY() - 3, anchor.getY() + 22);
+        while (topProbe.getY() < maxTop && isFragmentAnchorBlock(world, topProbe.up())) {
+            topProbe.move(0, 1, 0);
+            anchorTopY = topProbe.getY();
+        }
+
+        BlockPos.Mutable pos = new BlockPos.Mutable();
+        for (int i = 0; i < FRAGMENT_SPAWN_POS_TRIES; i++) {
+            pos.set(anchor.getX() + random.nextBetween(-3, 3),
+                    Math.min(world.getTopY() - 2, anchorTopY + random.nextBetween(2, 7)),
+                    anchor.getZ() + random.nextBetween(-3, 3));
+            if (world.isAir(pos) && world.isAir(pos.up())) {
+                return pos.toImmutable();
+            }
+        }
+
+        BlockPos fallback = new BlockPos(anchor.getX(), Math.min(world.getTopY() - 2, anchorTopY + 3), anchor.getZ());
+        return world.isAir(fallback) && world.isAir(fallback.up()) ? fallback : null;
+    }
+
+    private static boolean isFragmentAnchorBlock(ServerWorld world, BlockPos pos) {
+        var state = world.getBlockState(pos);
+        return state.isOf(ModBlocks.ABYSAL_FUSTE)
+                || state.isOf(ModBlocks.FUSTE_CARCASA)
+                || state.isOf(ModBlocks.ABYSS_VEIN)
+                || state.isOf(ModBlocks.BONY_RACIM)
+                || state.isOf(ModBlocks.BONY_RACIM_BLOCK);
+    }
+
+    private static void handleErraticSpawns(MinecraftServer server, PlayerEntity player) {
+        if (!(player instanceof ServerPlayerEntity serverPlayer)) return;
+        if (serverPlayer.getWorld().getRegistryKey() != ModDimensions.VOIDED_DIMENSION_KEY) return;
+        if ((server.getTicks() % ERRATIC_SPAWN_CHECK_INTERVAL) != 0) return;
+
+        ServerWorld world = serverPlayer.getServerWorld();
+        Random random = world.getRandom();
+        if (random.nextDouble() > ERRATIC_SPAWN_CHANCE) return;
+
+        Box localBox = new Box(serverPlayer.getBlockPos()).expand(36, 20, 36);
+        int nearby = world.getEntitiesByClass(ErraticEntity.class, localBox, Entity::isAlive).size();
+        if (nearby >= ERRATIC_MAX_NEAR_PLAYER) return;
+
+        BlockPos anchor = findErraticAnchor(world, serverPlayer.getBlockPos(), random);
+        if (anchor == null) return;
+
+        BlockPos spawnPos = findFragmentSpawnPos(world, anchor, random);
+        if (spawnPos == null) return;
+
+        ErraticEntity erratic = ModEntities.ERRATIC.create(world);
+        if (erratic == null) return;
+
+        erratic.refreshPositionAndAngles(spawnPos.getX() + 0.5, spawnPos.getY() + 0.1, spawnPos.getZ() + 0.5,
+                random.nextFloat() * 360.0f, 0.0f);
+        world.spawnEntity(erratic);
+    }
+
+    private static BlockPos findErraticAnchor(ServerWorld world, BlockPos center, Random random) {
+        BlockPos.Mutable pos = new BlockPos.Mutable();
+        for (int i = 0; i < ERRATIC_ANCHOR_SEARCH_TRIES; i++) {
+            int x = center.getX() + random.nextBetween(-ERRATIC_ANCHOR_RADIUS, ERRATIC_ANCHOR_RADIUS);
+            int y = Math.max(world.getBottomY() + 1,
+                    Math.min(world.getTopY() - 2, center.getY() + random.nextBetween(-ERRATIC_ANCHOR_Y_RANGE, ERRATIC_ANCHOR_Y_RANGE)));
+            int z = center.getZ() + random.nextBetween(-ERRATIC_ANCHOR_RADIUS, ERRATIC_ANCHOR_RADIUS);
+            pos.set(x, y, z);
+            if (isErraticAnchorBlock(world, pos)) {
+                return pos.toImmutable();
+            }
+        }
+        return null;
+    }
+
+    private static boolean isErraticAnchorBlock(ServerWorld world, BlockPos pos) {
+        var state = world.getBlockState(pos);
+        return state.isOf(ModBlocks.ABYSAL_FUSTE)
+                || state.isOf(ModBlocks.FUSTE_CARCASA)
+                || state.isOf(ModBlocks.ABYSS_VEIN);
     }
 
     private static void applyFragileBedrockPatch(ServerWorld world, ChunkPos chunkPos) {

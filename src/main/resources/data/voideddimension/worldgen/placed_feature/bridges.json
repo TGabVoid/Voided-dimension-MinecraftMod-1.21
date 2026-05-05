@@ -1,0 +1,9 @@
+﻿{
+  "feature": "voideddimension:bridges",
+  "placement": [
+    { "type": "minecraft:count", "count": 6 },
+    { "type": "minecraft:in_square" },
+    { "type": "minecraft:height_range", "height": { "type": "minecraft:uniform", "min_inclusive": { "absolute": 260 }, "max_inclusive": { "absolute": 340 } } },
+    { "type": "minecraft:biome" }
+  ]
+}

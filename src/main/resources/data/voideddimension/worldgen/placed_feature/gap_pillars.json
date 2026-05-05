@@ -1,5 +1,5 @@
   {
-  "feature": "voideddimension:gap_pillar",
+  "feature": "voideddimension:gap_pillars",
   "placement": [
     { "type": "minecraft:count", "count": 1 },
     { "type": "minecraft:in_square" },

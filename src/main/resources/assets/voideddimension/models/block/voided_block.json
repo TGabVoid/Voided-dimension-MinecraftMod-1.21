@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "voideddimension:block/voided_block_top",
+    "side": "voideddimension:block/voided_block_side"
+  }
+}

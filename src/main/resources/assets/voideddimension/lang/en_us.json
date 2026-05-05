@@ -16,6 +16,12 @@
 
   "entity.voideddimension.puppetman": "Puppetman",
   "item.voideddimension.puppetman_spawn_egg": "Puppetman Spawn Egg",
+  "entity.voideddimension.wandering_fragment": "Wandering Fragment",
+  "item.voideddimension.wandering_fragment_spawn_egg": "Wandering Fragment Spawn Egg",
+  "entity.voideddimension.fragment_summoner": "Fragment Summoner",
+  "item.voideddimension.fragment_summoner_spawn_egg": "Fragment Summoner Spawn Egg",
+  "entity.voideddimension.erratic": "Erratic",
+  "item.voideddimension.erratic_spawn_egg": "Erratic Spawn Egg",
   "item.voideddimension.void_pass": "Void Pass",
   "block.voideddimension.fragile_bedrock": "Fragile Bedrock",
 
@@ -30,7 +36,18 @@
   "block.voideddimension.curse_cobblestone_block": "Curse Cobblestone",
   "block.voideddimension.grey_stone_block": "Grey Stone",
   "block.voideddimension.black_stone_block": "Black Stone",
+  "block.voideddimension.dust_plate": "Dust Plate",
+  "block.voideddimension.fractured_cobblestone": "Fractured Cobblestone",
+  "block.voideddimension.stress_crack": "Stress Crack",
+  "block.voideddimension.fractured_stone": "Fractured Stone",
   "block.voideddimension.sand_ashe": "Ash Sand",
   "block.voideddimension.dirt_ashe": "Ash Dirt",
-  "block.voideddimension.ashe": "Ash"
+  "block.voideddimension.ashe": "Ash",
+  "block.voideddimension.abysal_fuste": "Abyssal Fuste",
+  "block.voideddimension.fuste_carcasa": "Fuste Carcasa",
+  "block.voideddimension.abyss_vein": "Abyss Vein",
+  "block.voideddimension.bony_racim_block": "Bony Racim Block",
+  "block.voideddimension.bony_racim": "Bony Racim",
+  "category.voideddimension": "Voided Dimension",
+  "key.voideddimension.rtp_voided": "Random TP to Voided (Y=300)"
 }

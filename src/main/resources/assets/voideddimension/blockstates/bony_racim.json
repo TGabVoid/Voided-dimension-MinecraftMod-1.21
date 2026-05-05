@@ -1,0 +1,16 @@
+{
+  "variants": {
+	"facing=down,waterlogged=false": { "model": "voideddimension:block/bony_racim", "x": 180 },
+	"facing=down,waterlogged=true": { "model": "voideddimension:block/bony_racim", "x": 180 },
+	"facing=up,waterlogged=false": { "model": "voideddimension:block/bony_racim" },
+	"facing=up,waterlogged=true": { "model": "voideddimension:block/bony_racim" },
+	"facing=north,waterlogged=false": { "model": "voideddimension:block/bony_racim", "x": 90 },
+	"facing=north,waterlogged=true": { "model": "voideddimension:block/bony_racim", "x": 90 },
+	"facing=south,waterlogged=false": { "model": "voideddimension:block/bony_racim", "x": 90, "y": 180 },
+	"facing=south,waterlogged=true": { "model": "voideddimension:block/bony_racim", "x": 90, "y": 180 },
+	"facing=west,waterlogged=false": { "model": "voideddimension:block/bony_racim", "x": 90, "y": 270 },
+	"facing=west,waterlogged=true": { "model": "voideddimension:block/bony_racim", "x": 90, "y": 270 },
+	"facing=east,waterlogged=false": { "model": "voideddimension:block/bony_racim", "x": 90, "y": 90 },
+	"facing=east,waterlogged=true": { "model": "voideddimension:block/bony_racim", "x": 90, "y": 90 }
+  }
+}

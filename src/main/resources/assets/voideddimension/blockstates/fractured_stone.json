@@ -1,0 +1,9 @@
+{
+  "variants": {
+    "facing=north": { "model": "voideddimension:block/fractured_stone" },
+    "facing=east": { "model": "voideddimension:block/fractured_stone", "y": 90 },
+    "facing=south": { "model": "voideddimension:block/fractured_stone", "y": 180 },
+    "facing=west": { "model": "voideddimension:block/fractured_stone", "y": 270 }
+  }
+}
+

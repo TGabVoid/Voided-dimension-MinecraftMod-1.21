@@ -41,16 +41,8 @@
     [
       "voideddimension:rose_desert_smoother",
       "voideddimension:rose_petrified_roses",
-      "voideddimension:rose_petals"
-    ],
-    [
-      {
-        "type": "minecraft:surface_builder",
-        "config": {
-          "top_material": "voideddimension:dirt_ashe",
-          "under_material": "voideddimension:sand_ashe"
-        }
-      }
+      "voideddimension:rose_petals",
+      "voideddimension:rose_bone_remnants"
     ],
     [],
     [],

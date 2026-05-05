@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "axis=y": { "model": "voideddimension:block/fractured_cobblestone" },
+    "axis=z": { "model": "voideddimension:block/fractured_cobblestone", "x": 90 },
+    "axis=x": { "model": "voideddimension:block/fractured_cobblestone", "x": 90, "y": 90 }
+  }
+}
+

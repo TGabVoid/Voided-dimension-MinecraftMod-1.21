@@ -46,10 +46,19 @@ public class ModItemGroup
                         entries.add(new ItemStack(ModBlocks.CURSE_COBBLESTONE_BLOCK));
                         entries.add(new ItemStack(ModBlocks.GREY_STONE_BLOCK));
                         entries.add(new ItemStack(ModBlocks.BLACK_STONE_BLOCK));
+                        entries.add(new ItemStack(ModBlocks.DUST_PLATE));
+                        entries.add(new ItemStack(ModBlocks.FRACTURED_COBBLESTONE));
+                        entries.add(new ItemStack(ModBlocks.STRESS_CRACK));
+                        entries.add(new ItemStack(ModBlocks.FRACTURED_STONE));
                         entries.add(new ItemStack(ModBlocks.FRAGILE_BEDROCK));
                         entries.add(new ItemStack(ModBlocks.SAND_ASHE));
                         entries.add(new ItemStack(ModBlocks.DIRT_ASHE));
                         entries.add(new ItemStack(ModBlocks.ASHE));
+                        entries.add(new ItemStack(ModBlocks.ABYSAL_FUSTE));
+                        entries.add(new ItemStack(ModBlocks.FUSTE_CARCASA));
+                        entries.add(new ItemStack(ModBlocks.ABYSS_VEIN));
+                        entries.add(new ItemStack(ModBlocks.BONY_RACIM_BLOCK));
+                        entries.add(new ItemStack(ModBlocks.BONY_RACIM));
                     } ))
 
                     .build());
@@ -65,6 +74,8 @@ public class ModItemGroup
                         entries.add(new ItemStack(ModBlocks.SAND_ASHE));
                         entries.add(new ItemStack(ModBlocks.DIRT_ASHE));
                         entries.add(new ItemStack(ModBlocks.ASHE));
+                        entries.add(new ItemStack(ModBlocks.BONY_RACIM_BLOCK));
+                        entries.add(new ItemStack(ModBlocks.BONY_RACIM));
                     } ))
 
                     .build());
@@ -76,6 +87,9 @@ public class ModItemGroup
                     .entries(((displayContext, entries) ->
                     {
                         entries.add(new ItemStack(ModItems.PUPPETMAN_SPAWN_EGG));
+                        entries.add(new ItemStack(ModItems.WANDERING_FRAGMENT_SPAWN_EGG));
+                        entries.add(new ItemStack(ModItems.FRAGMENT_SUMMONER_SPAWN_EGG));
+                        entries.add(new ItemStack(ModItems.ERRATIC_SPAWN_EGG));
                     } ))
 
                     .build());

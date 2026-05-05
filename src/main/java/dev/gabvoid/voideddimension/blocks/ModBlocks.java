@@ -7,6 +7,7 @@ import dev.gabvoid.voideddimension.blocks.custom.ParticleBlock;
 import dev.gabvoid.voideddimension.blocks.custom.RosePetalsBlock;
 import dev.gabvoid.voideddimension.blocks.custom.SafeBlock;
 import dev.gabvoid.voideddimension.blocks.custom.MixedPetalsBlock;
+import dev.gabvoid.voideddimension.blocks.custom.CrumblyAbyssBlock;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.item.BlockItem;
@@ -136,6 +137,49 @@ public class ModBlocks {
                     .strength(3.0F, 0.5f))
     );
 
+    public static final Block DUST_PLATE = registerBlock(
+            "dust_plate",
+            new PillarBlock(AbstractBlock.Settings.create()
+                    .sounds(BlockSoundGroup.STONE)
+                    .strength(2.0F, 0.5f))
+    );
+
+    public static final Block FRACTURED_COBBLESTONE = registerBlock(
+            "fractured_cobblestone",
+            new PillarBlock(AbstractBlock.Settings.create()
+                    .sounds(BlockSoundGroup.STONE)
+                    .strength(2.0F, 0.5f))
+    );
+
+    public static final Block STRESS_CRACK = registerBlock(
+            "stress_crack",
+            new PillarBlock(AbstractBlock.Settings.create()
+                    .sounds(BlockSoundGroup.STONE)
+                    .strength(2.0F, 0.5f))
+    );
+
+    public static final Block FRACTURED_STONE = registerBlock(
+            "fractured_stone",
+            new HorizontalFacingBlock(AbstractBlock.Settings.create()
+                    .sounds(BlockSoundGroup.STONE)
+                    .strength(2.0F, 0.5f)) {
+                @Override
+                protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
+                    return null;
+                }
+
+                @Override
+                protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+                    builder.add(FACING);
+                }
+
+                @Override
+                public BlockState getPlacementState(ItemPlacementContext ctx) {
+                    return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+                }
+            }
+    );
+
     public static final Block FRAGILE_BEDROCK = registerBlock(
             "fragile_bedrock",
             new Block(AbstractBlock.Settings.create()
@@ -174,6 +218,52 @@ public class ModBlocks {
                     .nonOpaque())
     );
 
+    public static final Block CRUMBLY_ABYSS = registerBlock(
+            "crumbly_abyss",
+            new CrumblyAbyssBlock(AbstractBlock.Settings.create()
+                    .strength(0.5f)
+                    .sounds(BlockSoundGroup.GRAVEL))
+    );
+
+    public static final Block ABYSAL_FUSTE = registerBlock(
+            "abysal_fuste",
+            new PillarBlock(AbstractBlock.Settings.create()
+                    .strength(2.0f)
+                    .sounds(BlockSoundGroup.BONE))
+    );
+
+    public static final Block FUSTE_CARCASA = registerBlock(
+            "fuste_carcasa",
+            new PillarBlock(AbstractBlock.Settings.create()
+                    .strength(2.0f)
+                    .sounds(BlockSoundGroup.BONE))
+    );
+
+    public static final Block ABYSS_VEIN = registerBlock(
+            "abyss_vein",
+            new PillarBlock(AbstractBlock.Settings.create()
+                    .strength(2.0f)
+                    .sounds(BlockSoundGroup.BONE))
+    );
+
+    public static final Block BONY_RACIM_BLOCK = registerBlock(
+            "bony_racim_block",
+            new Block(AbstractBlock.Settings.create()
+                    .strength(3.0f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK))
+    );
+
+    public static final Block BONY_RACIM = registerBlock(
+            "bony_racim",
+            new AmethystClusterBlock(7, 3, AbstractBlock.Settings.create()
+                    .replaceable()
+                    .strength(1.5f)
+                    .sounds(BlockSoundGroup.AMETHYST_CLUSTER)
+                    .nonOpaque()
+                    .luminance(state -> 5))
+    );
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(VoidedDimension.MOD_ID, name), block);
@@ -210,6 +300,12 @@ public class ModBlocks {
             entries.add(AMALGAMA_ORE_BLOCK);
             entries.add(FRAGILE_BEDROCK);
             entries.add(ASHE);
+            entries.add(CRUMBLY_ABYSS);
+            entries.add(ABYSAL_FUSTE);
+            entries.add(FUSTE_CARCASA);
+            entries.add(ABYSS_VEIN);
+            entries.add(BONY_RACIM_BLOCK);
+            entries.add(BONY_RACIM);
         });
     }
 }

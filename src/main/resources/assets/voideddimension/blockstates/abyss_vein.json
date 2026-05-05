@@ -1,0 +1,7 @@
+{
+  "variants": {
+	"axis=y": { "model": "voideddimension:block/abyss_vein" },
+	"axis=z": { "model": "voideddimension:block/abyss_vein", "x": 90 },
+	"axis=x": { "model": "voideddimension:block/abyss_vein", "x": 90, "y": 90 }
+  }
+}

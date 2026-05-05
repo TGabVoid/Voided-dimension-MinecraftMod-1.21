@@ -74,7 +74,7 @@ loom {
             client()
             name "Data Generation"
             vmArg "-Dfabric-api.datagen"
-            vmArg "-Dfabric-api.datagen.output-dir=${file("src/generated") }"
+            vmArg "-Dfabric-api.datagen.output-dir=${file("build/generated") }"
             vmArg "-Dfabric-api.datagen.modid=voideddimension"
         }
 
@@ -119,12 +119,3 @@ tasks.register('autoTestClient') {
     dependsOn 'runClientAuto'
 }
 
-sourceSets {
-    main {
-        resources {
-            srcDirs += [
-                    './src/generated'
-            ]
-        }
-    }
-}

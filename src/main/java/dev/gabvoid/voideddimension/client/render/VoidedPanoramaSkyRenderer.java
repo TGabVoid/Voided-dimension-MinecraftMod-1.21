@@ -1,5 +1,6 @@
 package dev.gabvoid.voideddimension.client.render;
 
+import dev.gabvoid.voideddimension.world.ModDimensions;
 import net.fabricmc.fabric.api.client.rendering.v1.DimensionRenderingRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderContext;
 import net.minecraft.client.render.BufferBuilder;
@@ -9,6 +10,7 @@ import net.minecraft.client.render.Tessellator;
 import net.minecraft.client.render.VertexFormat;
 import net.minecraft.client.render.VertexFormats;
 import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.Identifier;
 import org.joml.Matrix4f;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -26,6 +28,16 @@ public final class VoidedPanoramaSkyRenderer implements DimensionRenderingRegist
             return;
         }
 
+        // Solo mostrar este cielo dentro del bioma inactive_threshold.
+        BlockPos cameraPos = BlockPos.ofFloored(context.camera().getPos());
+        boolean isInactiveBiome = context.world().getBiome(cameraPos)
+                .getKey()
+                .map(key -> key.equals(ModDimensions.INACTIVE_THRESHOLD_KEY))
+                .orElse(false);
+        if (!isInactiveBiome) {
+            return;
+        }
+
         if (!loggedOnce) {
             System.out.println("[VoidedDimension] Custom sky renderer active with texture: " + PANORAMA);
             loggedOnce = true;
@@ -33,11 +45,11 @@ public final class VoidedPanoramaSkyRenderer implements DimensionRenderingRegist
 
         MatrixStack matrices = context.matrixStack();
         matrices.push();
-        matrices.multiply(context.camera().getRotation());
 
         RenderSystem.disableDepthTest();
         RenderSystem.depthMask(false);
-        RenderSystem.disableBlend();
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
         RenderSystem.disableCull();
         RenderSystem.setShader(GameRenderer::getPositionTexProgram);
         RenderSystem.setShaderTexture(0, PANORAMA);
@@ -72,6 +84,7 @@ public final class VoidedPanoramaSkyRenderer implements DimensionRenderingRegist
         }
 
         RenderSystem.enableCull();
+        RenderSystem.disableBlend();
         RenderSystem.depthMask(true);
         RenderSystem.enableDepthTest();
         matrices.pop();

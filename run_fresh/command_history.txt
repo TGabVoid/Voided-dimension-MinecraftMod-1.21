@@ -1,50 +1,50 @@
-/tp @s 3353 303 -2468
-/execute in voideddimension:voided_dimension run tp @s 1245 300 12451
+/locate feature voideddimension:giant_void
+/tp @s -922 512 -51703
+/feature create giant_void
+/feature range giant_void 2 96 280 320
+/feature range void_shafts 12 96 270 350
+/effect give @s minecraft:night_vision infinite
 /locate biome voideddimension:fragmented_plains
-/tp @s 933 327 12103
-/effect give @s minecraft:darkness
+/tp @s 13854 355 18266
 /effect clear
-/locate biome voideddimension:rose_desert
-/tp @s 1230 17 12271
-/tp @s 8878 300 -634
-/locate biome voideddimension:rose_desert
-/tp @s 9230 300 -442
-/give @s voideddimension:white_rose_petal
-/give @s voideddimension:black_rose_petal
-/give @s voideddimension:ashe
-/execute in voideddimension:voided_dimension run tp @s 1245 300 12451
-/xp add Player797 0
-/xp add Player797 0 levels
-/xp set Player797 0
-/xp set Player797 0 levels
-/summon voideddimension:puppetman
-/locate biome voideddimension:inactive_threshold
-/tp @s 1562 359 12184
-/locate biome voideddimension:inactive_threshold
+/effect give @s minecraft:night_vision
+/effect give @s minecraft:night_vision infinite
+/effect clear
+/effect give @s minecraft:night_vision infinite
 /locate biome voideddimension:fragmented_plains
-/tp @s -902 359 15416
-/summon voideddimension:puppetman
-/effect give Player797 minecraft:darkness
-/execute in voideddimension:voided_dimension run tp @s 1245 300 12451
-/execute in voideddimension:voided_dimension run tp @s 1245 69 12451
+/tp @s -16012 300 51334
+/effect give @s minecraft:night_vision infinite
+/tp @s -16012 300 51334
+/effect give @s minecraft:night_vision infinite
+/tp @s -16012 300 51334
+/effect give @s minecraft:night_vision infinite
 /kill
-/execute in voideddimension:voided_dimension run tp @s 1245 300 12451
-/execute in voideddimension:voided_dimension run tp @s 1245 9 12451
-/give @s voideddimension:fragile_bedrock
-/give @s voideddimension:ashe
-/give @s voideddimension:void_pass
-/give @s voideddimension:voided_block
-/give @s voideddimension:void_block
-/give @s voideddimension:curse_stone_block
-/give @s voideddimension:dirt_ashe
-/give @s voideddimension:sand_ashe
-/give @s voideddimension:black_stone_block
+/effect give @s minecraft:night_vision infinite
+/locate biome voideddimension:rose_desert
+/tp @s -233 14 81
+/locate biome voideddimension:shatter_reef
+/tp @s -203 78 -17
 /effect clear
-/locate biome voideddimension:inactive_threshold
-/tp @s 966 363 12094
 /locate biome voideddimension:rose_desert
-/tp @s 1386 186 12171
-/locate biome voideddimension:inactive_threshold
-/tp @s 1170 349 12087
+/tp @s -42517 300 -50421
+/effect give @s minecraft:night_vision infinite
 /locate biome voideddimension:rose_desert
-/tp @s 1392 364 12168
+/locate biome voideddimension:fragmented_plains
+/tp @s -42640 348 -50741
+/effect give @s minecraft:night_vision infinite
+/setworldspawn -42662 350 -50768
+/gamerule keepInventory
+/gamerule keepInventory false
+/gamerule keepInventory true
+/effect give @s minecraft:night_vision infinite
+/effect clear
+/effect give @s minecraft:night_vision infinite
+/kill
+/effect give @s minecraft:night_vision infinite
+/effect clear
+/effect give @s minecraft:night_vision infinite
+/locate biome voideddimension:fragmented_plains
+/tp @s 41132 365 52977
+/effect clear
+/effect give @s minecraft:night_vision infinite
+/effect clear

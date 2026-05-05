@@ -2,8 +2,10 @@ package dev.gabvoid.voideddimension.client.input;
 
 import dev.gabvoid.voideddimension.client.screen.ArcaneAdvanceScreen;
 import dev.gabvoid.voideddimension.client.screen.ArcaneQuickwheelScreen;
+import dev.gabvoid.voideddimension.network.ModNetworking;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.option.KeyBinding;
 import net.minecraft.client.util.InputUtil;
@@ -12,6 +14,7 @@ import org.lwjgl.glfw.GLFW;
 public final class ModKeyBindings {
     private static KeyBinding openArcaneScreen9;
     private static KeyBinding openArcaneScreen0;
+    private static KeyBinding rtpVoidedKey;
 
     private ModKeyBindings() {
     }
@@ -31,6 +34,13 @@ public final class ModKeyBindings {
             "category.voideddimension"
         ));
 
+        rtpVoidedKey = KeyBindingHelper.registerKeyBinding(new KeyBinding(
+            "key.voideddimension.rtp_voided",
+            InputUtil.Type.KEYSYM,
+            GLFW.GLFW_KEY_I,
+            "category.voideddimension"
+        ));
+
         ClientTickEvents.END_CLIENT_TICK.register(ModKeyBindings::handleKeyPress);
     }
 
@@ -45,6 +55,12 @@ public final class ModKeyBindings {
 
         if (openArcaneScreen0.wasPressed()) {
             toggleQuickwheel(client);
+        }
+
+        while (rtpVoidedKey.wasPressed()) {
+            if (ClientPlayNetworking.canSend(ModNetworking.RtpVoidedPayload.ID)) {
+                ClientPlayNetworking.send(new ModNetworking.RtpVoidedPayload(0));
+            }
         }
 
         keepMovementWhileQuickwheel(client);

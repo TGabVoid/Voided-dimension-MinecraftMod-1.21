@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "axis=y": { "model": "voideddimension:block/stress_crack" },
+    "axis=z": { "model": "voideddimension:block/stress_crack", "x": 90 },
+    "axis=x": { "model": "voideddimension:block/stress_crack", "x": 90, "y": 90 }
+  }
+}
+

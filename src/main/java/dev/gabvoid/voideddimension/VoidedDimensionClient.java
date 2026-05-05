@@ -7,6 +7,9 @@ import net.fabricmc.fabric.api.client.rendering.v1.DimensionRenderingRegistry;
 import net.minecraft.client.render.RenderLayer;
 import dev.gabvoid.voideddimension.entity.ModEntities;
 import dev.gabvoid.voideddimension.client.render.PuppetmanRenderer;
+import dev.gabvoid.voideddimension.client.render.WanderingFragmentRenderer;
+import dev.gabvoid.voideddimension.client.render.FragmentSummonerRenderer;
+import dev.gabvoid.voideddimension.client.render.ErraticRenderer;
 import dev.gabvoid.voideddimension.client.render.FragileBedrockOverlayRenderer;
 import dev.gabvoid.voideddimension.client.input.ModKeyBindings;
 import dev.gabvoid.voideddimension.blocks.ModBlocks;
@@ -20,9 +23,13 @@ public class VoidedDimensionClient implements ClientModInitializer {
         System.out.println("VoidedDimensionClient inicializado correctamente.");
 
         EntityRendererRegistry.register(ModEntities.PUPPETMAN, PuppetmanRenderer::new);
+        EntityRendererRegistry.register(ModEntities.WANDERING_FRAGMENT, WanderingFragmentRenderer::new);
+        EntityRendererRegistry.register(ModEntities.FRAGMENT_SUMMONER, FragmentSummonerRenderer::new);
+        EntityRendererRegistry.register(ModEntities.ERRATIC, ErraticRenderer::new);
         FragileBedrockOverlayRenderer.register();
         ModKeyBindings.register();
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ROSE_PETALS, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BONY_RACIM, RenderLayer.getCutout());
         DimensionRenderingRegistry.registerSkyRenderer(ModDimensions.VOIDED_DIMENSION_KEY, new VoidedPanoramaSkyRenderer());
         // Cloud renderer no-op: evita que se dibujen nubes en la dimensión.
         DimensionRenderingRegistry.registerCloudRenderer(ModDimensions.VOIDED_DIMENSION_KEY, context -> {

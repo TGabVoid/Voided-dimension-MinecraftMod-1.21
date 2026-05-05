@@ -1,0 +1,7 @@
+{
+  "variants": {
+	"axis=y": { "model": "voideddimension:block/fuste_carcasa" },
+	"axis=z": { "model": "voideddimension:block/fuste_carcasa", "x": 90 },
+	"axis=x": { "model": "voideddimension:block/fuste_carcasa", "x": 90, "y": 90 }
+  }
+}
