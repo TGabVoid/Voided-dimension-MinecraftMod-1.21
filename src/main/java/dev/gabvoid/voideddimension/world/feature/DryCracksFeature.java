@@ -48,6 +48,9 @@ public class DryCracksFeature extends Feature<DefaultFeatureConfig> {
     private static final double FUSTE_CENTER_CHANCE = 0.30; // 30% por centro de celda
     private static final double FUSTE_LOWER_MULTI_CHANCE = 0.055; // 50%/9 ~= 5.5% (bajito por chunk/celda)
     private static final int CHUNK_INTERIOR_MARGIN = 7; // margen agresivo para evitar cortes verticales por borde de chunk
+    private static final BlockState FRACTURED_STONE_STATE = ModBlocks.FRACTURED_STONE.getDefaultState();
+    private static final BlockState FRACTURED_COBBLESTONE_STATE = ModBlocks.FRACTURED_COBBLESTONE.getDefaultState();
+    private static final BlockState STRESS_CRACK_STATE = ModBlocks.STRESS_CRACK.getDefaultState();
 
     public DryCracksFeature(Codec<DefaultFeatureConfig> codec) {
         super(codec);
@@ -193,22 +196,22 @@ public class DryCracksFeature extends Feature<DefaultFeatureConfig> {
                     // Solo el borde Voronoi se abre como grieta de aire, con profundidad segura.
                     changed |= carveSafeEdgeCrack(world, top, SAFE_EDGE_DEPTH);
                 } else if (edgeMetric >= edgeThreshold + 1.0 && edgeMetric <= edgeThreshold + 4.5) {
-                    // Usar un "ruido" extra para determinar si este segmento de la celula permitira spikes
-                    // De esta forma la celula no esta "rodeada" completamente de forma perfecta.
+                    // Usar un "ruido" extra para determinar si este segmento de la celula permitara stress cracks verticales
                     double segmentNoise = hash01(x / 5, z / 5, seed, 42); 
-                    if (segmentNoise < 0.25) { // Solo el 25% (un 1/4) del borde de la célula permite picos
-                        if (random.nextFloat() < 0.15f) { // Triplicar la probabilidad (de 0.05 a 0.15) de generar un spike
-                            generateSpike(world, top, random);
-                            changed = true;
-                        } else if (random.nextFloat() < 0.15f) { 
-                            // Manchas en el suelo con materiales de los spikes
-                            world.setBlockState(top, random.nextBoolean() ? Blocks.BLACKSTONE.getDefaultState() : Blocks.OBSIDIAN.getDefaultState(), Block.NOTIFY_ALL);
+                    if (segmentNoise < 0.15) { // Solo el 15% del borde permite stress cracks verticales
+                        if (random.nextFloat() < 0.10f) { // Generar stress crack vertical raramente
+                            generateVerticalStressCrack(world, top, random);
                             changed = true;
                         }
                     }
                 } else {
-                    // Sin debug de colores: dejar base natural con curse stone.
-                    world.setBlockState(top, ModBlocks.CURSE_STONE_BLOCK.getDefaultState(), Block.NOTIFY_ALL);
+                    // Base de superficie: fractured_stone (como grass block)
+                    world.setBlockState(top, FRACTURED_STONE_STATE, Block.NOTIFY_ALL);
+                    // Un poco debajo: fractured_cobblestone
+                    BlockPos below = top.down();
+                    if (world.isAir(below) || !isDrySurface(world.getBlockState(below))) {
+                        world.setBlockState(below, FRACTURED_COBBLESTONE_STATE, Block.NOTIFY_ALL);
+                    }
                     changed = true;
                 }
             }
@@ -292,6 +295,34 @@ public class DryCracksFeature extends Feature<DefaultFeatureConfig> {
             Blocks.BLACK_CONCRETE.getDefaultState()
         };
         return colors[Math.abs(index) % colors.length];
+    }
+
+    private void generateVerticalStressCrack(StructureWorldAccess world, BlockPos groundPos, net.minecraft.util.math.random.Random random) {
+        // Generar grietas de estrés verticales de forma irregular
+        int crackHeight = 2 + random.nextInt(4); // 2-5 bloques de alto
+        int crackWidth = random.nextBoolean() ? 1 : 2; // 1-2 bloques de ancho
+        
+        // Dirección aleatoria horizontal (donde desciende la grieta)
+        Direction[] horizontals = new Direction[] { Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST };
+        Direction crackDir = horizontals[random.nextInt(horizontals.length)];
+        
+        BlockPos current = groundPos;
+        for (int step = 0; step < crackHeight; step++) {
+            // Crear irregularidades en la grieta
+            if (random.nextFloat() < 0.3f && step > 0) {
+                // Cambiar dirección ocasionalmente
+                crackDir = horizontals[random.nextInt(horizontals.length)];
+            }
+            
+            BlockPos target = current.down(step).offset(crackDir, step % 2 == 0 ? crackWidth : -crackWidth);
+            
+            if (!world.isAir(target)) {
+                BlockState state = world.getBlockState(target);
+                if (isDrySurface(state)) {
+                    world.setBlockState(target, STRESS_CRACK_STATE, Block.NOTIFY_ALL);
+                }
+            }
+        }
     }
 
     private void generateSpike(StructureWorldAccess world, BlockPos groundPos, net.minecraft.util.math.random.Random random) {
@@ -405,11 +436,11 @@ public class DryCracksFeature extends Feature<DefaultFeatureConfig> {
         if (referenceTopState.isOf(ModBlocks.ASHE)) {
             return ModBlocks.ASHE.getDefaultState();
         }
-        if (referenceTopState.isOf(ModBlocks.CURSE_COBBLESTONE_BLOCK)) {
-            return ModBlocks.CURSE_COBBLESTONE_BLOCK.getDefaultState();
+        if (referenceTopState.isOf(ModBlocks.FRACTURED_COBBLESTONE)) {
+            return ModBlocks.FRACTURED_COBBLESTONE.getDefaultState();
         }
-        if (referenceTopState.isOf(ModBlocks.CURSE_STONE_BLOCK)) {
-            return ModBlocks.CURSE_STONE_BLOCK.getDefaultState();
+        if (referenceTopState.isOf(ModBlocks.FRACTURED_STONE)) {
+            return ModBlocks.FRACTURED_STONE.getDefaultState();
         }
         if (referenceTopState.isOf(Blocks.CRACKED_STONE_BRICKS)) {
             return Blocks.CRACKED_STONE_BRICKS.getDefaultState();
@@ -743,11 +774,11 @@ public class DryCracksFeature extends Feature<DefaultFeatureConfig> {
                 || state.isOf(Blocks.ANDESITE)
                 || state.isOf(Blocks.CRACKED_STONE_BRICKS)
                 || state.isOf(Blocks.WHITE_CONCRETE)
-                || state.isOf(ModBlocks.CURSE_STONE_BLOCK)
-                || state.isOf(ModBlocks.CURSE_COBBLESTONE_BLOCK)
                 || state.isOf(ModBlocks.DIRT_ASHE)
                 || state.isOf(ModBlocks.SAND_ASHE)
                 || state.isOf(ModBlocks.ASHE)
+                || state.isOf(ModBlocks.FRACTURED_STONE)
+                || state.isOf(ModBlocks.FRACTURED_COBBLESTONE)
                 || state.isOf(Blocks.BEDROCK);
     }
 

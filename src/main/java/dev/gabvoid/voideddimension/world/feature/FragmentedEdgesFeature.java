@@ -240,9 +240,10 @@ public class FragmentedEdgesFeature extends Feature<DefaultFeatureConfig> {
 
     private boolean isCrackHost(BlockState state) {
         return state.isOf(Blocks.STONE) || state.isOf(Blocks.COBBLESTONE) || state.isOf(Blocks.ANDESITE) 
-                || state.isOf(Blocks.CRACKED_STONE_BRICKS) || state.isOf(ModBlocks.CURSE_STONE_BLOCK)
-                || state.isOf(ModBlocks.CURSE_COBBLESTONE_BLOCK) || state.isOf(ModBlocks.ASHE) 
+                || state.isOf(Blocks.CRACKED_STONE_BRICKS)
+                || state.isOf(ModBlocks.ASHE) 
                 || state.isOf(ModBlocks.DIRT_ASHE) || state.isOf(ModBlocks.SAND_ASHE)
+                || state.isOf(ModBlocks.FRACTURED_STONE) || state.isOf(ModBlocks.FRACTURED_COBBLESTONE)
                 || state.isOf(Blocks.OBSIDIAN) || state.isOf(Blocks.DEEPSLATE);
     }
 
