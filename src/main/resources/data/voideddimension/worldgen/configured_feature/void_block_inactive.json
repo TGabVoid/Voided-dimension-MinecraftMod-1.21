@@ -1,4 +1,6 @@
 {
-  "type": "voideddimension:void_block_inactive"
+  "type": "voideddimension:void_block_inactive",
+  "config": {}
 }
+
 

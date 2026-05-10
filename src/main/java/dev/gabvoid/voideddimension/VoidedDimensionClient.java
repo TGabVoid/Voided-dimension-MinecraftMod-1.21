@@ -30,6 +30,11 @@ public class VoidedDimensionClient implements ClientModInitializer {
         ModKeyBindings.register();
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.ROSE_PETALS, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BONY_RACIM, RenderLayer.getCutout());
+        // Bloques non-opaque para espectador
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FUSTE_CARCASA, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FRACTURED_STONE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FRACTURED_COBBLESTONE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.STRESS_CRACK, RenderLayer.getCutout());
         DimensionRenderingRegistry.registerSkyRenderer(ModDimensions.VOIDED_DIMENSION_KEY, new VoidedPanoramaSkyRenderer());
         // Cloud renderer no-op: evita que se dibujen nubes en la dimensión.
         DimensionRenderingRegistry.registerCloudRenderer(ModDimensions.VOIDED_DIMENSION_KEY, context -> {
