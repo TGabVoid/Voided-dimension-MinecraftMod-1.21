@@ -200,7 +200,7 @@ public class DryCracksFeature extends Feature<DefaultFeatureConfig> {
                     // Usar un "ruido" extra para determinar si este segmento de la celula permitara stress cracks verticales
                     double segmentNoise = hash01(x / 5, z / 5, seed, 42);
                     if (segmentNoise < 0.15) { // Solo el 15% del borde permite stress cracks verticales
-                        if (random.nextFloat() < 0.10f) { // Generar stress crack vertical raramente
+                        if (random.nextFloat() < 0.50f) { // 5x más frecuentes: aumentado de 0.10f a 0.50f
                             generateVerticalStressCrack(world, top, random);
                             changed = true;
                         }
@@ -272,6 +272,9 @@ public class DryCracksFeature extends Feature<DefaultFeatureConfig> {
                 }
             }
         }
+
+        // Generar formación de venas de abyss (raíces) después del patrón principal
+        generateAbyssVeins(world, center, random);
 
         return changed;
     }
@@ -793,6 +796,96 @@ public class DryCracksFeature extends Feature<DefaultFeatureConfig> {
         Direction[] directions = { Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST };
         Direction randomFacing = directions[random.nextInt(directions.length)];
         return ModBlocks.STRESS_CRACK.getDefaultState().with(Properties.HORIZONTAL_FACING, randomFacing);
+    }
+
+    private void generateAbyssVeins(StructureWorldAccess world, BlockPos origin, net.minecraft.util.math.random.Random random) {
+        // Generar formación de venas de abyss que parecen raíces conectadas
+        int rootCount = 3 + random.nextInt(3); // 3-5 raíces principales
+        
+        for (int root = 0; root < rootCount; root++) {
+            // Punto de inicio para cada raíz (disperso en XZ, pero profundo en Y)
+            int startX = origin.getX() + random.nextBetween(-48, 48);
+            int startZ = origin.getZ() + random.nextBetween(-48, 48);
+            int startY = origin.getY() - random.nextBetween(8, 64); // Profundo, variado
+            
+            generateAbyssVeinChain(world, new BlockPos(startX, startY, startZ), random, 12 + random.nextInt(8));
+        }
+    }
+    
+    private void generateAbyssVeinChain(StructureWorldAccess world, BlockPos start, net.minecraft.util.math.random.Random random, int maxLength) {
+        // Generar una cadena continuada de venas que se conecta y ramifica
+        BlockPos current = start;
+        int length = 0;
+        Direction[] horizontals = { Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST };
+        Direction currentDir = horizontals[random.nextInt(horizontals.length)];
+        
+        while (length < maxLength && current.getY() >= MIN_Y) {
+            // Colocar vena de abyss si es posible
+            if (isDrySurface(world.getBlockState(current))) {
+                if (random.nextFloat() < 0.85f) { // 85% de densidad
+                    BlockState veinState = ModBlocks.ABYSS_VEIN.getDefaultState();
+                    // Alternar pillar axis para diversidad
+                    if (random.nextBoolean()) {
+                        veinState = veinState.with(net.minecraft.state.property.Properties.AXIS, random.nextBoolean() ? Direction.Axis.X : Direction.Axis.Z);
+                    }
+                    world.setBlockState(current, veinState, Block.NOTIFY_ALL);
+                }
+            }
+            
+            // Ocasionalmente cambiar dirección o descender
+            if (random.nextFloat() < 0.2f) {
+                currentDir = horizontals[random.nextInt(horizontals.length)];
+            }
+            
+            // Generar capilares (ramificaciones finas)
+            if (random.nextFloat() < 0.15f) {
+                generateAbyssCapillary(world, current, random);
+            }
+            
+            // Movimiento: principalmente horizontal, ocasionalmente bajar
+            if (random.nextFloat() < 0.3f) {
+                current = current.down();
+            } else {
+                current = current.offset(currentDir);
+            }
+            
+            length++;
+        }
+    }
+    
+    private void generateAbyssCapillary(StructureWorldAccess world, BlockPos start, net.minecraft.util.math.random.Random random) {
+        // Generar ramificación delgada de capilares
+        BlockPos current = start;
+        Direction[] horizontals = { Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST };
+        Direction capillaryDir = horizontals[random.nextInt(horizontals.length)];
+        int capillaryLength = 2 + random.nextInt(5); // Capilares cortos
+        
+        for (int i = 0; i < capillaryLength; i++) {
+            if (isDrySurface(world.getBlockState(current)) && random.nextFloat() < 0.5f) {
+                // Usar bony_racim para los capilares (clusters más pequeños)
+                if (random.nextFloat() < 0.6f) {
+                    world.setBlockState(current, ModBlocks.BONY_RACIM.getDefaultState(), Block.NOTIFY_ALL);
+                } else {
+                    BlockState veinState = ModBlocks.ABYSS_VEIN.getDefaultState();
+                    if (random.nextBoolean()) {
+                        veinState = veinState.with(net.minecraft.state.property.Properties.AXIS, Direction.Axis.Y);
+                    }
+                    world.setBlockState(current, veinState, Block.NOTIFY_ALL);
+                }
+            }
+            
+            // Capilares descienden más que avanzan horizontalmente
+            if (random.nextFloat() < 0.6f) {
+                current = current.down();
+            } else {
+                current = current.offset(capillaryDir);
+            }
+            
+            // Ocasionalmente cambiar dirección
+            if (random.nextFloat() < 0.3f) {
+                capillaryDir = horizontals[random.nextInt(horizontals.length)];
+            }
+        }
     }
 
     private record Site(BlockPos pos, int width) { }

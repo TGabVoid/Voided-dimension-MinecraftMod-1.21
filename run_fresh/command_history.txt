@@ -1,21 +1,3 @@
-/locate biome voideddimension:fragmented_plains
-/tp @s 13854 355 18266
-/effect clear
-/effect give @s minecraft:night_vision
-/effect give @s minecraft:night_vision infinite
-/effect clear
-/effect give @s minecraft:night_vision infinite
-/locate biome voideddimension:fragmented_plains
-/tp @s -16012 300 51334
-/effect give @s minecraft:night_vision infinite
-/tp @s -16012 300 51334
-/effect give @s minecraft:night_vision infinite
-/tp @s -16012 300 51334
-/effect give @s minecraft:night_vision infinite
-/kill
-/effect give @s minecraft:night_vision infinite
-/locate biome voideddimension:rose_desert
-/tp @s -233 14 81
 /locate biome voideddimension:shatter_reef
 /tp @s -203 78 -17
 /effect clear
@@ -48,3 +30,21 @@
 /tp @s 40959 320 53164
 /effect clear
 /effect give @s minecraft:night_vision infinite 0 true
+/locate biome voideddimension:fragmented_plains
+/tp @s 10756 203 28292
+/locate biome voideddimension:fragmented_plains
+/tp @s 14663 300 -54126
+/locate biome voideddimension:fragmented_plains
+/tp @s 14663 378 -54119
+/locate biome voideddimension:fragmented_plains
+/tp @s -21481 300 47896
+/locate biome voideddimension:fragmented_plains
+/effect give @s minecraft:night_vision infinite 0 true
+/tp @s 10989 300 3060
+/locate biome voideddimension:fragmented_plains
+/effect clear
+/effect give @s minecraft:night_vision infinite 0 true
+/locate biome voideddimension:fragmented_plains
+/tp @s 51194 300 18284
+/locate biome voideddimension:fragmented_plains
+/tp @s -27796 284 30799
