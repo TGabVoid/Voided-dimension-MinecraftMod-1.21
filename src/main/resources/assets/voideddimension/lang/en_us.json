@@ -41,9 +41,12 @@
   "block.voideddimension.ashe": "Ash",
   "block.voideddimension.abysal_fuste": "Abyssal Fuste",
   "block.voideddimension.fuste_carcasa": "Fuste Carcasa",
-  "block.voideddimension.abyss_vein": "Abyss Vein",
-  "block.voideddimension.bony_racim_block": "Bony Racim Block",
-  "block.voideddimension.bony_racim": "Bony Racim",
-  "category.voideddimension": "Voided Dimension",
-  "key.voideddimension.rtp_voided": "Random TP to Voided (Y=300)"
+   "block.voideddimension.abyss_vein": "Abyss Vein",
+   "block.voideddimension.bony_racim_block": "Bony Racim Block",
+   "block.voideddimension.bony_racim": "Bony Racim",
+   "block.voideddimension.fractured_stone": "Fractured Stone",
+   "block.voideddimension.fractured_cobblestone": "Fractured Cobblestone",
+   "block.voideddimension.stress_crack": "Stress Crack",
+   "category.voideddimension": "Voided Dimension",
+   "key.voideddimension.rtp_voided": "Random TP to Voided (Y=300)"
 }
