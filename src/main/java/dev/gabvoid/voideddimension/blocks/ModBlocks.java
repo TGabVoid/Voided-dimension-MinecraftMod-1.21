@@ -153,9 +153,24 @@ public class ModBlocks {
 
     public static final Block STRESS_CRACK = registerBlock(
             "stress_crack",
-            new PillarBlock(AbstractBlock.Settings.create()
+            new HorizontalFacingBlock(AbstractBlock.Settings.create()
                     .sounds(BlockSoundGroup.STONE)
-                    .strength(2.0F, 0.5f))
+                    .strength(2.0F, 0.5f)) {
+                @Override
+                protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
+                    return null;
+                }
+
+                @Override
+                protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+                    builder.add(FACING);
+                }
+
+                @Override
+                public BlockState getPlacementState(ItemPlacementContext ctx) {
+                    return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+                }
+            }
     );
 
     public static final Block FRACTURED_STONE = registerBlock(

@@ -10,6 +10,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.state.property.Properties;
 import net.minecraft.world.Heightmap;
 import net.minecraft.world.StructureWorldAccess;
 import net.minecraft.world.gen.feature.DefaultFeatureConfig;
@@ -50,7 +51,7 @@ public class DryCracksFeature extends Feature<DefaultFeatureConfig> {
     private static final int CHUNK_INTERIOR_MARGIN = 7; // margen agresivo para evitar cortes verticales por borde de chunk
     private static final BlockState FRACTURED_STONE_STATE = ModBlocks.FRACTURED_STONE.getDefaultState();
     private static final BlockState FRACTURED_COBBLESTONE_STATE = ModBlocks.FRACTURED_COBBLESTONE.getDefaultState();
-    private static final BlockState STRESS_CRACK_STATE = ModBlocks.STRESS_CRACK.getDefaultState();
+    // STRESS_CRACK se genera dinámicamente con facing aleatorio
 
     public DryCracksFeature(Codec<DefaultFeatureConfig> codec) {
         super(codec);
@@ -213,10 +214,13 @@ public class DryCracksFeature extends Feature<DefaultFeatureConfig> {
                     }
                 } else {
                     // Base de superficie: fractured_stone (como grass block)
+                    // Forzar relación grass-dirt: SIEMPRE fractured_stone encima de fractured_cobblestone
                     world.setBlockState(top, FRACTURED_STONE_STATE, Block.NOTIFY_ALL);
-                    // Un poco debajo: fractured_cobblestone
+                    // Un poco debajo: fractured_cobblestone (sin importar qué haya)
                     BlockPos below = top.down();
-                    if (world.isAir(below) || !isDrySurface(world.getBlockState(below))) {
+                    BlockState belowState = world.getBlockState(below);
+                    // Si debajo NO es cobblestone, reemplazar por cobblestone
+                    if (!belowState.isOf(ModBlocks.FRACTURED_COBBLESTONE)) {
                         world.setBlockState(below, FRACTURED_COBBLESTONE_STATE, Block.NOTIFY_ALL);
                     }
                     changed = true;
@@ -340,11 +344,19 @@ public class DryCracksFeature extends Feature<DefaultFeatureConfig> {
                 if (random.nextFloat() < 0.85f) {
                     BlockState state = world.getBlockState(target);
                     if (isDrySurface(state)) {
-                        world.setBlockState(target, STRESS_CRACK_STATE, Block.NOTIFY_ALL);
+                        // Generar stress_crack con facing aleatorio
+                        BlockState stressCrackState = getRandomStressCrackState(random);
+                        world.setBlockState(target, stressCrackState, Block.NOTIFY_ALL);
                     }
                 }
             }
         }
+    }
+
+    private BlockState getRandomStressCrackState(net.minecraft.util.math.random.Random random) {
+        Direction[] directions = { Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST };
+        Direction randomFacing = directions[random.nextInt(directions.length)];
+        return ModBlocks.STRESS_CRACK.getDefaultState().with(Properties.HORIZONTAL_FACING, randomFacing);
     }
 
     private void generateSpike(StructureWorldAccess world, BlockPos groundPos, net.minecraft.util.math.random.Random random) {
