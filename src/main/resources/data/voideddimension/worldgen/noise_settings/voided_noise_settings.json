@@ -147,7 +147,7 @@
                 "min_threshold": -1.0,
                 "max_threshold": -0.2
               },
-              "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:curse_cobblestone_block" } }
+              "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:fractured_stone", "Properties": { "facing": "north" } } }
             },
             {
               "type": "minecraft:condition",
@@ -159,7 +159,7 @@
               },
               "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:grey_stone_block" } }
             },
-            { "type": "minecraft:block", "result_state": { "Name": "voideddimension:curse_stone_block" } }
+            { "type": "minecraft:block", "result_state": { "Name": "voideddimension:fractured_cobblestone" } }
           ]
         }
       },
@@ -211,7 +211,7 @@
                 "min_threshold": -1.0,
                 "max_threshold": -0.25
               },
-              "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:curse_cobblestone_block" } }
+              "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:fractured_stone", "Properties": { "facing": "north" } } }
             },
             {
               "type": "minecraft:condition",
@@ -223,7 +223,7 @@
               },
               "then_run": { "type": "minecraft:block", "result_state": { "Name": "voideddimension:grey_stone_block" } }
             },
-            { "type": "minecraft:block", "result_state": { "Name": "voideddimension:curse_stone_block" } }
+            { "type": "minecraft:block", "result_state": { "Name": "voideddimension:fractured_cobblestone" } }
           ]
         }
       },
@@ -725,6 +725,6 @@
     "vein_ridged": { "type": "minecraft:constant", "argument": 0.0 },
     "vein_gap": { "type": "minecraft:constant", "argument": 0.0 }
   },
-  "default_block": { "Name": "voideddimension:curse_stone_block" },
+  "default_block": { "Name": "voideddimension:fractured_cobblestone" },
   "default_fluid": { "Name": "minecraft:air" }
 }
