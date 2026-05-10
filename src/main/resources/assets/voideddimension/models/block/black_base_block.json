@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cube_column",
+  "parent": "voideddimension:block/thin_column",
   "textures": {
     "end": "voideddimension:block/black_base_block_top",
     "side": "voideddimension:block/black_base_block_side"

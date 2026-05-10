@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "voideddimension:block/thin_cube_all",
   "textures": {
     "all": "voideddimension:block/curse_stone_block"
   }

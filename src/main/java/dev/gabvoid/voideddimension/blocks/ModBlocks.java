@@ -40,7 +40,8 @@ public class ModBlocks {
                     .strength(4.0f, 6.0f)
                     .sounds(BlockSoundGroup.SCULK)
                     .requiresTool()
-                    .luminance(state -> 6))
+                    .luminance(state -> 6)
+                    .nonOpaque())
     );
 
     public static final Block AMALGAMA_ORE_BLOCK = registerBlock(
@@ -50,7 +51,8 @@ public class ModBlocks {
                             .sounds(BlockSoundGroup.ANCIENT_DEBRIS)
                             .requiresTool()
                             .strength(3.0F, .5f)
-                            .luminance(state -> 4))
+                            .luminance(state -> 4)
+                            .nonOpaque())
     );
 
     public static final Block AGONIZING_LIGHT_TRAIL = registerBlock(
@@ -72,7 +74,8 @@ public class ModBlocks {
             "void_block",
             new HorizontalFacingBlock(AbstractBlock.Settings.create()
                     .sounds(BlockSoundGroup.GRASS)
-                    .strength(1.0F, 0.5f)) {
+                    .strength(1.0F, 0.5f)
+                    .nonOpaque()) {
                 @Override
                 protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
                     return null; // O simplemente retorna null para el codec
@@ -94,7 +97,8 @@ public class ModBlocks {
             "curse_stone_block",
             new Block(AbstractBlock.Settings.create()
                     .sounds(BlockSoundGroup.STONE)
-                    .strength(2.0F, 0.5f))
+                    .strength(2.0F, 0.5f)
+                    .nonOpaque())
     );
 
     public static final Block BLACK_BASE_BLOCK = registerBlock(
@@ -102,7 +106,8 @@ public class ModBlocks {
             new PillarBlock(AbstractBlock.Settings.create()
                     .sounds(BlockSoundGroup.BONE)
                     .requiresTool()
-                    .strength(4.0F, 0.5f))
+                    .strength(4.0F, 0.5f)
+                    .nonOpaque())
     );
 
     public static final Block VOIDED_BLOCK = registerBlock(
@@ -110,7 +115,8 @@ public class ModBlocks {
             new PillarBlock(AbstractBlock.Settings.create()
                     .sounds(BlockSoundGroup.ANCIENT_DEBRIS)
                     .requiresTool()
-                    .strength(9.0F, 0.5f))
+                    .strength(9.0F, 0.5f)
+                    .nonOpaque())
     );
 
     public static final Block CURSE_COBBLESTONE_BLOCK = registerBlock(
@@ -118,7 +124,8 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create()
                     .sounds(BlockSoundGroup.GILDED_BLACKSTONE)
                     .requiresTool()
-                    .strength(3.0F, 0.5f))
+                    .strength(3.0F, 0.5f)
+                    .nonOpaque())
     );
 
     public static final Block GREY_STONE_BLOCK = registerBlock(
@@ -126,7 +133,8 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create()
                     .sounds(BlockSoundGroup.GILDED_BLACKSTONE)
                     .requiresTool()
-                    .strength(3.0F, 0.5f))
+                    .strength(3.0F, 0.5f)
+                    .nonOpaque())
     );
 
     public static final Block BLACK_STONE_BLOCK = registerBlock(
@@ -134,7 +142,8 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create()
                     .sounds(BlockSoundGroup.ANCIENT_DEBRIS)
                     .requiresTool()
-                    .strength(3.0F, 0.5f))
+                    .strength(3.0F, 0.5f)
+                    .nonOpaque())
     );
 
     public static final Block DUST_PLATE = registerBlock(
@@ -148,14 +157,16 @@ public class ModBlocks {
             "fractured_cobblestone",
             new PillarBlock(AbstractBlock.Settings.create()
                     .sounds(BlockSoundGroup.STONE)
-                    .strength(2.0F, 0.5f))
+                    .strength(2.0F, 0.5f)
+                    .nonOpaque())
     );
 
     public static final Block STRESS_CRACK = registerBlock(
             "stress_crack",
             new HorizontalFacingBlock(AbstractBlock.Settings.create()
                     .sounds(BlockSoundGroup.STONE)
-                    .strength(2.0F, 0.5f)) {
+                    .strength(2.0F, 0.5f)
+                    .nonOpaque()) {
                 @Override
                 protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
                     return null;
@@ -200,28 +211,32 @@ public class ModBlocks {
             "fragile_bedrock",
             new Block(AbstractBlock.Settings.create()
                     .sounds(BlockSoundGroup.STONE)
-                    .strength(0.8F, 0.5F))
+                    .strength(0.8F, 0.5F)
+                    .nonOpaque())
     );
 
     public static final Block SAND_ASHE = registerBlock(
             "sand_ashe",
             new Block(AbstractBlock.Settings.create()
                     .strength(0.5f)
-                    .sounds(BlockSoundGroup.SAND))
+                    .sounds(BlockSoundGroup.SAND)
+                    .nonOpaque())
     );
 
     public static final Block DIRT_ASHE = registerBlock(
             "dirt_ashe",
             new Block(AbstractBlock.Settings.create()
                     .strength(0.5f)
-                    .sounds(BlockSoundGroup.GRAVEL))
+                    .sounds(BlockSoundGroup.GRAVEL)
+                    .nonOpaque())
     );
 
     public static final Block ASHE = registerBlock(
             "ashe",
             new Block(AbstractBlock.Settings.create()
                     .strength(0.6f)
-                    .sounds(BlockSoundGroup.SAND))
+                    .sounds(BlockSoundGroup.SAND)
+                    .nonOpaque())
     );
 
     public static final Block ROSE_PETALS = registerBlockWithoutItem(
@@ -245,21 +260,24 @@ public class ModBlocks {
             "abysal_fuste",
             new PillarBlock(AbstractBlock.Settings.create()
                     .strength(2.0f)
-                    .sounds(BlockSoundGroup.BONE))
+                    .sounds(BlockSoundGroup.BONE)
+                    .nonOpaque())
     );
 
     public static final Block FUSTE_CARCASA = registerBlock(
             "fuste_carcasa",
             new PillarBlock(AbstractBlock.Settings.create()
                     .strength(2.0f)
-                    .sounds(BlockSoundGroup.BONE))
+                    .sounds(BlockSoundGroup.BONE)
+                    .nonOpaque())
     );
 
     public static final Block ABYSS_VEIN = registerBlock(
             "abyss_vein",
             new PillarBlock(AbstractBlock.Settings.create()
                     .strength(2.0f)
-                    .sounds(BlockSoundGroup.BONE))
+                    .sounds(BlockSoundGroup.BONE)
+                    .nonOpaque())
     );
 
     public static final Block BONY_RACIM_BLOCK = registerBlock(
@@ -267,7 +285,8 @@ public class ModBlocks {
             new Block(AbstractBlock.Settings.create()
                     .strength(3.0f)
                     .requiresTool()
-                    .sounds(BlockSoundGroup.AMETHYST_BLOCK))
+                    .sounds(BlockSoundGroup.AMETHYST_BLOCK)
+                    .nonOpaque())
     );
 
     public static final Block BONY_RACIM = registerBlock(
@@ -325,3 +344,7 @@ public class ModBlocks {
         });
     }
 }
+
+
+
+

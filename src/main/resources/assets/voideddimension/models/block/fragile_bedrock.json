@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/cube_all",
+Z  "parent": "voideddimension:block/thin_cube_all",
   "textures": {
     "all": "minecraft:block/stone"
   }
