@@ -1,5 +1,3 @@
-/locate biome voideddimension:shatter_reef
-/tp @s -203 78 -17
 /effect clear
 /locate biome voideddimension:rose_desert
 /tp @s -42517 300 -50421
@@ -48,3 +46,5 @@
 /tp @s 51194 300 18284
 /locate biome voideddimension:fragmented_plains
 /tp @s -27796 284 30799
+/locate biome voideddimension:fragmented_plains
+/tp @s -55640 277 10174

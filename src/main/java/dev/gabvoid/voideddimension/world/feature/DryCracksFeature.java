@@ -808,16 +808,18 @@ public class DryCracksFeature extends Feature<DefaultFeatureConfig> {
             int startZ = origin.getZ() + random.nextBetween(-48, 48);
             int startY = origin.getY() - random.nextBetween(8, 64); // Profundo, variado
             
-            generateAbyssVeinChain(world, new BlockPos(startX, startY, startZ), random, 12 + random.nextInt(8));
+            generateAbyssVeinChain(world, new BlockPos(startX, startY, startZ), random, 10 + random.nextInt(11));
         }
     }
     
     private void generateAbyssVeinChain(StructureWorldAccess world, BlockPos start, net.minecraft.util.math.random.Random random, int maxLength) {
-        // Generar una cadena continuada de venas que se conecta y ramifica
+        // Generar cadenas largas de venas (10-20 bloques) sin entrecortarse
         BlockPos current = start;
         int length = 0;
         Direction[] horizontals = { Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST };
         Direction currentDir = horizontals[random.nextInt(horizontals.length)];
+        int directionSteps = 0;
+        int maxStepsBeforeTurn = 5 + random.nextInt(4); // Mantener dirección más tiempo
         
         while (length < maxLength && current.getY() >= MIN_Y) {
             // Colocar vena de abyss si es posible
@@ -829,12 +831,24 @@ public class DryCracksFeature extends Feature<DefaultFeatureConfig> {
                         veinState = veinState.with(net.minecraft.state.property.Properties.AXIS, random.nextBoolean() ? Direction.Axis.X : Direction.Axis.Z);
                     }
                     world.setBlockState(current, veinState, Block.NOTIFY_ALL);
+                    
+                    // Máximo 3 bloques de ancho: ocasionalmente coloca un bloque adyacente
+                    if (random.nextFloat() < 0.25f) {
+                        Direction[] perpendiculars = { Direction.UP, Direction.DOWN };
+                        BlockPos adjacent = current.offset(perpendiculars[random.nextInt(perpendiculars.length)]);
+                        if (isDrySurface(world.getBlockState(adjacent)) && random.nextFloat() < 0.6f) {
+                            world.setBlockState(adjacent, veinState, Block.NOTIFY_ALL);
+                        }
+                    }
                 }
             }
             
-            // Ocasionalmente cambiar dirección o descender
-            if (random.nextFloat() < 0.2f) {
+            // Cambiar dirección con menos frecuencia para cadenas más largas
+            directionSteps++;
+            if (directionSteps >= maxStepsBeforeTurn || random.nextFloat() < 0.1f) {
                 currentDir = horizontals[random.nextInt(horizontals.length)];
+                directionSteps = 0;
+                maxStepsBeforeTurn = 5 + random.nextInt(4);
             }
             
             // Generar capilares (ramificaciones finas)
