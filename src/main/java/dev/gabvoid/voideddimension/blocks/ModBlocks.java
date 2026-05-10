@@ -177,7 +177,8 @@ public class ModBlocks {
             "fractured_stone",
             new HorizontalFacingBlock(AbstractBlock.Settings.create()
                     .sounds(BlockSoundGroup.STONE)
-                    .strength(2.0F, 0.5f)) {
+                    .strength(2.0F, 0.5f)
+                    .nonOpaque()) {
                 @Override
                 protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
                     return null;
