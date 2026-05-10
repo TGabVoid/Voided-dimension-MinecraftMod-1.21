@@ -1,7 +1,8 @@
 {
   "variants": {
-    "axis=y": { "model": "voideddimension:block/stress_crack" },
-    "axis=z": { "model": "voideddimension:block/stress_crack", "x": 90 },
-    "axis=x": { "model": "voideddimension:block/stress_crack", "x": 90, "y": 90 }
+    "facing=north": { "model": "voideddimension:block/stress_crack" },
+    "facing=east": { "model": "voideddimension:block/stress_crack", "y": 90 },
+    "facing=south": { "model": "voideddimension:block/stress_crack", "y": 180 },
+    "facing=west": { "model": "voideddimension:block/stress_crack", "y": 270 }
   }
 }
